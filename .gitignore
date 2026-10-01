@@ -10,15 +10,13 @@ dist/
 .env.*
 !.env.example
 runs/
-figures/
 data/
 cache/
 *.sqlite*
 *.ckpt
 *.safetensors
 *.bin
-*.pdf
-*.png
-*.svg
 *.zip
+paper/
+docs/appendix_tables.pdf
 .DS_Store

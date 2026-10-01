@@ -4,6 +4,7 @@
 
 import hashlib
 import json
+from pathlib import Path
 
 import pytest
 
@@ -14,7 +15,7 @@ import pyarrow.parquet as pq
 from pct4b.hub.cards import build_card
 from pct4b.hub.parquet import prepare_shards
 from pct4b.hub.publish import validate_release
-from pct4b.hub.staging import sanitize_config, stage_model
+from pct4b.hub.staging import sanitize_config, stage_model, visual_sources
 from pct4b.io import atomic_json, write_records
 
 
@@ -134,6 +135,13 @@ def test_dataset_card_has_standalone_configuration_and_not_merged_scope():
     assert "TODO" not in text
     assert "assets/banner.png" not in text
     assert "assets/overview.png" not in text
+
+
+def test_release_config_has_bundled_visuals_for_every_card():
+    root = Path(__file__).resolve().parents[1]
+    config = json.loads((root / "configs/hub/release.json").read_text())
+    for entry in config["repositories"]:
+        assert set(visual_sources(config, entry)) == {"banner.png", "overview.png"}
 
 
 def test_release_path_traversal_is_rejected(tmp_path):

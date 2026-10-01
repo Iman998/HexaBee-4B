@@ -45,6 +45,23 @@ def copy_file(source: Path, destination: Path) -> None:
         shutil.copy2(source, destination)
 
 
+def visual_sources(config: dict, entry: dict) -> dict[str, Path]:
+    """Use bundled Hub artwork by default, with optional per-repository overrides."""
+    key = entry["key"]
+    sources = {}
+    if config.get("brand_assets") and entry.get("banner"):
+        sources["banner.png"] = Path(config["brand_assets"]) / entry["banner"]
+    sources["overview.png"] = (
+        Path(__file__).resolve().parents[1] / "assets" / "hub-overviews" / f"{key}.png"
+    )
+    if config.get("visual_assets"):
+        for name in ("banner.png", "overview.png"):
+            override = Path(config["visual_assets"]) / key / name
+            if override.is_file():
+                sources[name] = override
+    return {name: source for name, source in sources.items() if source.is_file()}
+
+
 def sanitize_config(data):
     if isinstance(data, dict):
         return {
@@ -211,12 +228,8 @@ def prepare(config: dict, key: str) -> Path:
         stats, configs = stage_data(entry, destination, scratch)
     if key == "model":
         add_model_benchmark(config, stats)
-    visual_root = config.get("visual_assets")
-    if visual_root:
-        for name in ("banner.png", "overview.png"):
-            source = Path(visual_root) / key / name
-            if source.is_file():
-                copy_file(source, destination / "assets" / name)
+    for name, source in visual_sources(config, entry).items():
+        copy_file(source, destination / "assets" / name)
     license_text = (
         "# Model terms\n\nThese weights derive from Gemma 3 and remain subject to the "
         "[Gemma Terms of Use](https://ai.google.dev/gemma/terms) and prohibited-use policy. "
@@ -283,14 +296,10 @@ def refresh_card(config: dict, key: str) -> Path:
             partitions=metric_partitions(destination),
         )
     atomic_json(destination / "release_stats.json", stats)
-    visual_root = config.get("visual_assets")
-    if visual_root:
-        for name in ("banner.png", "overview.png"):
-            source = Path(visual_root) / key / name
-            if source.is_file():
-                target = destination / "assets" / name
-                target.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(source, target)
+    for name, source in visual_sources(config, entry).items():
+        target = destination / "assets" / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, target)
     visuals = {p.name for p in (destination / "assets").glob("*.png")}
     visuals.update(p.name for p in (destination / "figures").glob("*.png"))
     (destination / "README.md").write_text(

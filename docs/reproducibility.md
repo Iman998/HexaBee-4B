@@ -3,7 +3,7 @@
 | Workflow | Available in this release | Additional inputs needed |
 |:--|:--|:--|
 | Offline preparation and evaluation demo | Code, six-language fixtures, mock scores | Python dependencies |
-| Numeric tables and on-demand figure generation | Numeric results, training trace, plotting code | Metrics/plot dependencies |
+| Numeric tables and figure regeneration | Numeric results, training trace, plotting code, explanatory figures | Metrics/plot dependencies |
 | Paired judge intervals | 900 score rows; identity/direction labels; seed | NumPy |
 | Full raw-output metric calculation | Pinned metric implementation and CLI | Original source/reference/candidate files; COMET checkpoint for COMET |
 | Historical QA/answer-translation construction | 329 policies and retained component counts | Original ordered partitions and exact prompt pools |

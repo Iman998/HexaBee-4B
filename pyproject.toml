@@ -26,7 +26,7 @@ hexabee-hub = "pct4b.hub.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 [tool.setuptools.package-data]
-pct4b = ["assets/*.json", "assets/*.txt"]
+pct4b = ["assets/*.json", "assets/*.txt", "assets/hub-overviews/*.png"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 [tool.ruff]

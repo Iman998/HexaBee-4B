@@ -79,4 +79,4 @@ The evaluation job rejects mismatched or duplicate example identities. If files 
 sbatch jobs/workflow.sbatch runs/experiment.json verify
 ```
 
-This reads `results/paper/` and rebuilds numeric tables and interval checks under the run directory. It does not re-score unavailable original text outputs. The separate `scripts/build_paper_figures.py` generates figures on demand; generated binaries are ignored by Git. For exact historical boundaries, read [reproducibility.md](reproducibility.md).
+This reads `results/paper/` and rebuilds numeric tables and interval checks under the run directory. It does not re-score unavailable original text outputs. The separate `scripts/build_paper_figures.py` regenerates the versioned figures from committed numeric data. For exact historical boundaries, read [reproducibility.md](reproducibility.md).

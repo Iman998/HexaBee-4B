@@ -10,7 +10,7 @@ mkdir -p runs
 cp configs/hub/release.json runs/release.local.json
 ```
 
-Edit the copy to point `source` and `sources[].path` at your archived artifacts. Relative paths resolve from the working directory. The committed configuration uses portable example paths; it contains no local credentials. Optional Hub-only visuals can be kept **outside Git** at `<visual_assets>/<repository-key>/banner.png` and `overview.png`, then selected with `visual_assets` in the local config. Cards without those files render correctly as text. Previously published Hub images remain in their Hub repositories.
+Edit the copy to point `source` and `sources[].path` at your archived artifacts. Relative paths resolve from the working directory. The committed configuration uses portable example paths; it contains no local credentials. The bundled artwork is selected by `brand_assets` and each repository's `banner`; matching overview panels are packaged with the Python source. To override either image, put `banner.png` or `overview.png` at `<visual_assets>/<repository-key>/` and set `visual_assets` in the local config.
 
 ```bash
 hexabee-hub list --config runs/release.local.json
@@ -98,7 +98,7 @@ hexabee-hub collection --config runs/release.local.json --execute
 
 Card refresh preserves existing data and weight shards and updates the manifest for changed metadata. The collection command checks that every configured repository was verified and is public, then groups the independent repositories in a yellow-themed collection. Both upload and collection remain dry runs unless `--execute` is present.
 
-The Hub card builder can stage visuals from the external `visual_assets` directory during preparation or refresh. The research code repository intentionally does not package image binaries. For optional evaluation figures, generate them with `python scripts/build_paper_figures.py` inside a Slurm CPU job and set the evaluation entry's `figures` path in your local Hub config before preparing that release.
+The Hub card builder stages the included banner and overview images during preparation or refresh. `scripts/build_hub_card_visuals.py` can regenerate the overview panels with Pillow. Evaluation figures are included in `figures/` and can be regenerated with `python scripts/build_paper_figures.py` inside a Slurm CPU job. The images support navigation and explanation; the numeric evidence remains in `results/paper/`.
 
 
 If Xet uploads repeatedly time out on a network, stop that uploader before retrying the same repository through the supported HTTP/LFS path:

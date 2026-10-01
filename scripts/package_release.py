@@ -27,6 +27,8 @@ DIRECTORIES = {
     "tests",
     "examples",
     "results",
+    "figures",
+    "assets",
     "jobs",
     ".github",
 }
@@ -40,6 +42,9 @@ SUFFIXES = {
     ".yaml",
     ".yml",
     ".sbatch",
+    ".pdf",
+    ".svg",
+    ".png",
 }
 
 

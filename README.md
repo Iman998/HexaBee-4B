@@ -1,8 +1,12 @@
+<img src="assets/brand/01-hero-banner.png" alt="HexaBee-4B: six-language translation" width="100%">
+
 # HexaBee-4B research code
 
 Code and configuration for the six-language HexaBee translation experiment. The repository follows the actual work: prepare Wikipedia text and multilingual answering data, build aligned translation supervision, render LoRA training configurations, evaluate matched predictions, and verify the reported numeric results.
 
 **Languages:** Persian, English, Arabic, Chinese, Hebrew, and Spanish. **Task:** translation in all 30 non-identity directions. The released [final model](https://huggingface.co/Iman998/HexaBee-4B), [multilingual SFT data](https://huggingface.co/datasets/Iman998/HexaBee-Multilingual-SFT), and [evaluation archive](https://huggingface.co/datasets/Iman998/HexaBee-Evaluation) are separate from this code repository.
+
+![HexaBee at a glance: six languages, 30 directions, and three adaptation phases](src/pct4b/assets/hub-overviews/model.png)
 
 ## Run the offline example
 
@@ -45,11 +49,36 @@ Paths in the JSON are absolute or relative to the repository root. The workflow 
 
 The preparation command renders all training YAMLs. Launch their GPU stages in order from [the Slurm guide](docs/workflow.md); it does not start a trainer automatically. Synthetic text and teacher translations can be produced with the explicit, cached commands in [generation.md](docs/generation.md). The evaluation stage consumes aligned prediction files supplied in the workflow config. New raw predictions and a model judge require the model or service named in that guide.
 
+## Method and released artifacts
+
+![HexaBee training and evaluation flow](figures/method_overview.svg)
+
+For a question in language $s$, multilingual answering teaches the model to answer in requested language $t$ and response style $v$. It does **not** translate the question. Direct translation instead uses aligned source and target texts. The adaptation sequence is Wikipedia continued pretraining → multilingual answering and answer-text translation → merge → fresh translation LoRA → final merge.
+
+| Stage | Released data | Checkpoint |
+|:--|:--|:--|
+| Wikipedia text | [Wikipedia Foundations](https://huggingface.co/datasets/Iman998/HexaBee-Wikipedia-PT) | [PT LoRA](https://huggingface.co/Iman998/HexaBee-4B-PT-LoRA) |
+| Multilingual answering | [Answering and translation SFT](https://huggingface.co/datasets/Iman998/HexaBee-Multilingual-SFT) | [SFT LoRA](https://huggingface.co/Iman998/HexaBee-4B-Multilingual-SFT-LoRA) · [merged base](https://huggingface.co/Iman998/HexaBee-4B-Multilingual-Base) |
+| Bidirectional translation | [Aligned pairs and final SFT](https://huggingface.co/datasets/Iman998/HexaBee-Bidirectional-Translation) | [Translation LoRA](https://huggingface.co/Iman998/HexaBee-4B-Translation-LoRA) · [final model](https://huggingface.co/Iman998/HexaBee-4B) |
+| Audit | [Prompt pools](https://huggingface.co/datasets/Iman998/HexaBee-System-Prompts) · [model outputs](https://huggingface.co/datasets/Iman998/HexaBee-Model-Outputs) | [Evaluation archive](https://huggingface.co/datasets/Iman998/HexaBee-Evaluation) |
+
+The recorded phase-2 mixture contains **19,458,332 answering** and **10,695,072 answer-text translation** records. Final translation SFT has **658,274** forward/reverse records. The numeric evidence under `results/paper/` reports the following equal-direction macros over 36,572 synthetic test examples per system:
+
+| System | BLEU ↑ | chrF ↑ | chrF++ ↑ | TER ↓ | COMET ×100 ↑ |
+|:--|--:|--:|--:|--:|--:|
+| Gemma 3 4B IT | 40.70 | 58.91 | 57.11 | 51.40 | 85.88 |
+| Gemma 3 12B IT | 50.54 | 68.70 | 66.83 | 38.89 | 88.20 |
+| **HexaBee-4B** | **62.03** | **75.08** | **73.75** | **30.05** | **89.86** |
+
+These are archived research results with synthetic references, differing recorded inference prompts, and model-based judging. They are not an official shared-task ranking. The experiment evaluates the complete adaptation sequence; it does not isolate the causal contribution of answering. See [evaluation.md](docs/evaluation.md) and [reproducibility.md](docs/reproducibility.md).
+
 ## Repository map
 
 ```text
 configs/         Research recipes, training templates, workflow examples
+assets/          Visual identity used by the README and Hub cards
 examples/        Tiny offline fixtures; not research data
+figures/         Regenerable method and result illustrations
 jobs/            Slurm CPU and typed-GPU job entry points
 scripts/         Workflow, trainer/merge rendering, numeric verification
 src/pct4b/       Streaming data, prompts, generation, evaluation, Hub tools
@@ -58,7 +87,7 @@ tests/           Offline regression and integration checks
 docs/            Input formats, stages, evaluation, release instructions
 ```
 
-The Python namespace `pct4b` and `pct4b` command retain the historical experiment label. `hexabee` is an equivalent CLI. Source data, checkpoints, model outputs, API caches, generated figures, the manuscript, and branding binaries are not stored in this Git repository.
+The Python namespace `pct4b` and `pct4b` command retain the historical experiment label. `hexabee` is an equivalent CLI. The images and explanations support the documentation and Hub cards. Source data, checkpoints, raw model outputs, API caches, and the manuscript are separate from this Git repository.
 
 ## Verification and scope
 

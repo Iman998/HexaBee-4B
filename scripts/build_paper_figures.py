@@ -64,6 +64,8 @@ plt.rcParams.update(
 def save(fig, name):
     for ext in ["pdf", "svg", "png"]:
         fig.savefig(F / (name + "." + ext), dpi=220, bbox_inches="tight", facecolor="white")
+    svg = F / (name + ".svg")
+    svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n")
     plt.close(fig)
 
 

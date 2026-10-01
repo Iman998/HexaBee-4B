@@ -17,7 +17,8 @@
       "provenance": "The final model was trained with a fresh rank-256 LoRA (alpha 512, dropout 0.005) on the already-merged multilingual checkpoint. The final stage retained 658,274 SFT records: 329,137 aligned pairs in both orientations. It ran one epoch with learning rate 1e-4 and cutoff 4,096. All weights are preserved; only local path metadata is normalized for publication.",
       "limitations": "The released checkpoint has not been evaluated for image tasks, despite retaining the Gemma 3 multimodal architecture. Intermediate checkpoints have no independent matched translation evaluation. Quality can vary by language, domain, and input length.",
       "base_model": "Iman998/HexaBee-4B-Multilingual-Base",
-      "source": "data/release-inputs/model"
+      "source": "data/release-inputs/model",
+      "banner": "01-hero-banner.png"
     },
     {
       "key": "multilingual-base",
@@ -32,7 +33,8 @@
       "provenance": "Wikipedia adapter → continued multilingual SFT adapter → merge with Gemma 3 4B IT. Phase 2 used all 22 retained SFT datasets, totalling 30,153,404 records. No independent translation evaluation of this intermediate checkpoint is available.",
       "limitations": "The released checkpoint has not been evaluated for image tasks, despite retaining the Gemma 3 multimodal architecture. Intermediate checkpoints have no independent matched translation evaluation. Quality can vary by language, domain, and input length.",
       "base_model": "google/gemma-3-4b-it",
-      "source": "data/release-inputs/multilingual-base"
+      "source": "data/release-inputs/multilingual-base",
+      "banner": "05-phase2-multilingual-qa.png"
     },
     {
       "key": "lora-pt",
@@ -47,7 +49,8 @@
       "provenance": "This is the actual saved adapter from the final translator lineage. Its exact rank, alpha, dropout and target module inventory are recorded in `release_stats.json`; those values take precedence over a nearby YAML file that may have changed. Load on `google/gemma-3-4b-it`. Public repository names identify the role instead of historical local version suffixes.",
       "limitations": "The released checkpoint has not been evaluated for image tasks, despite retaining the Gemma 3 multimodal architecture. Intermediate checkpoints have no independent matched translation evaluation. Quality can vary by language, domain, and input length.",
       "base_model": "google/gemma-3-4b-it",
-      "source": "data/release-inputs/lora-pt"
+      "source": "data/release-inputs/lora-pt",
+      "banner": "04-phase1-knowledge.png"
     },
     {
       "key": "lora-sft",
@@ -62,7 +65,8 @@
       "provenance": "This is the actual saved adapter from the final translator lineage. Its exact rank, alpha, dropout and target module inventory are recorded in `release_stats.json`; those values take precedence over a nearby YAML file that may have changed. Load on `google/gemma-3-4b-it`. Public repository names identify the role instead of historical local version suffixes.",
       "limitations": "The released checkpoint has not been evaluated for image tasks, despite retaining the Gemma 3 multimodal architecture. Intermediate checkpoints have no independent matched translation evaluation. Quality can vary by language, domain, and input length.",
       "base_model": "google/gemma-3-4b-it",
-      "source": "data/release-inputs/lora-sft"
+      "source": "data/release-inputs/lora-sft",
+      "banner": "05-phase2-multilingual-qa.png"
     },
     {
       "key": "lora-translation",
@@ -77,7 +81,8 @@
       "provenance": "This is the actual saved adapter from the final translator lineage. Its exact rank, alpha, dropout and target module inventory are recorded in `release_stats.json`; those values take precedence over a nearby YAML file that may have changed. Load on `Iman998/HexaBee-4B-Multilingual-Base`. Public repository names identify the role instead of historical local version suffixes.",
       "limitations": "The released checkpoint has not been evaluated for image tasks, despite retaining the Gemma 3 multimodal architecture. Intermediate checkpoints have no independent matched translation evaluation. Quality can vary by language, domain, and input length.",
       "base_model": "Iman998/HexaBee-4B-Multilingual-Base",
-      "source": "data/release-inputs/lora-translation"
+      "source": "data/release-inputs/lora-translation",
+      "banner": "06-phase3-translation.png"
     },
     {
       "key": "data-pt",
@@ -142,7 +147,8 @@
           "component": "wiki_arz",
           "language": "arz"
         }
-      ]
+      ],
+      "banner": "04-phase1-knowledge.png"
     },
     {
       "key": "data-sft",
@@ -360,7 +366,8 @@
           "task": "translate",
           "expected_rows": 555638
         }
-      ]
+      ],
+      "banner": "05-phase2-multilingual-qa.png"
     },
     {
       "key": "data-translation",
@@ -409,7 +416,8 @@
           "task": "translate",
           "expected_rows": 329137
         }
-      ]
+      ],
+      "banner": "06-phase3-translation.png"
     },
     {
       "key": "prompts",
@@ -426,7 +434,8 @@
       "tasks": [
         "text-generation"
       ],
-      "source": "data/release-inputs/prompts"
+      "source": "data/release-inputs/prompts",
+      "banner": "07-system-prompts.png"
     },
     {
       "key": "outputs",
@@ -501,7 +510,8 @@
           "candidate_field": "gemma-12_translation",
           "expected_rows": 300
         }
-      ]
+      ],
+      "banner": "08-model-outputs.png"
     },
     {
       "key": "evaluation",
@@ -512,13 +522,15 @@
       "subtitle": "Thirty directions. Three systems. Traceable evidence.",
       "description": "All translation directions, automatic metrics, eight-dimension model judging, paired bootstrap intervals, and the data-composition audit in one independently downloadable evaluation repository.",
       "scope": "Numeric results · three systems · 30 directions",
-      "contents": "`all_direction_metrics.csv`: 90 system/direction rows with BLEU, chrF, chrF++, TER, COMET, judge means and all eight rubric dimensions in both modes. `paired_scores.csv`: 900 score-only rows for paired intervals. Additional JSON files contain metric signatures, sufficient statistics, COMET checkpoint provenance, and audited phase-2 data counts. Optional figures can be generated from the code. The expandable tables below compare all models separately for each target language.",
+      "contents": "`all_direction_metrics.csv`: 90 system/direction rows with BLEU, chrF, chrF++, TER, COMET, judge means and all eight rubric dimensions in both modes. `paired_scores.csv`: 900 score-only rows for paired intervals. Additional JSON files contain metric signatures, sufficient statistics, COMET checkpoint provenance, and audited phase-2 data counts. Figures are included in PNG, SVG and PDF formats. The expandable tables below compare all models separately for each target language.",
       "provenance": "Full test: 36,572 examples per model. Judge subset: 300 matched examples per model, ten per direction. SacreBLEU 2.5.1; BLEU zh tokenizer for Chinese targets and 13a otherwise; chrF character order 6; chrF++ word order 2; TER normalized with Asian support; unbabel-comet 2.2.7 and wmt22-comet-da (512-position encoder). Judge intervals use 10,000 paired direction-stratified bootstrap replicates and seed 20260912. Zero scores were recovered from raw responses rather than discarded.",
       "limitations": "Historical exports may contain empty strings, imperfect generated text and instruction conflicts. Source row reuse is not independent evidence. See measured release statistics and the accompanying evaluation scope.",
       "tasks": [
         "translation"
       ],
-      "source": "data/release-inputs/evaluation"
+      "source": "data/release-inputs/evaluation",
+      "banner": "09-evaluation.png",
+      "figures": "figures"
     }
   ],
   "upload_policy": {
@@ -528,5 +540,6 @@
     "restart_delay_seconds": 30,
     "max_restart_delay_seconds": 300,
     "blocked_retry_seconds": 900
-  }
+  },
+  "brand_assets": "assets/brand"
 }
