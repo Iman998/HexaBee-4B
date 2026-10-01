@@ -268,6 +268,7 @@ def test_publication_requires_verified_remote_bytes(tmp_path, monkeypatch, corru
     from pct4b.hub import publish as publisher
 
     config, _ = _fake_release(tmp_path)
+    config["public"] = True
     objects, visibility = {}, []
 
     class FakeApi:
@@ -303,6 +304,49 @@ def test_publication_requires_verified_remote_bytes(tmp_path, monkeypatch, corru
         result = publisher.publish(config, "test", execute=True)
         assert result["published"] and result["files"] == 2
         assert visibility == [False]
+
+
+def test_private_upload_closes_existing_public_repo_before_transfer(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    from pct4b.hub import publish as publisher
+
+    config, _ = _fake_release(tmp_path)
+    objects = {}
+    events = []
+    private = False
+
+    class FakeApi:
+        def repo_info(self, *args, **kwargs):
+            return SimpleNamespace(
+                private=private, siblings=list(objects.values()), sha="fixture-revision"
+            )
+
+        def update_repo_settings(self, *args, **kwargs):
+            nonlocal private
+            events.append(("visibility", kwargs["private"]))
+            private = kwargs["private"]
+
+        def create_commit(self, **kwargs):
+            assert private, "files must not be uploaded to a public repository"
+            events.append(("upload", True))
+            for op in kwargs["operations"]:
+                data = Path(op.path_or_fileobj).read_bytes()
+                objects[op.path_in_repo] = SimpleNamespace(
+                    rfilename=op.path_in_repo,
+                    size=len(data),
+                    lfs=None,
+                    blob_id=hashlib.sha1(
+                        b"blob " + str(len(data)).encode() + b"\0" + data
+                    ).hexdigest(),
+                )
+            return SimpleNamespace(oid="fixture-revision")
+
+    monkeypatch.setattr(publisher, "authenticate", lambda *args: FakeApi())
+    result = publisher.publish(config, "test", execute=True)
+    assert result["published"] and result["public"] is False
+    assert events[0] == ("visibility", True)
+    assert events[1] == ("upload", True)
 
 
 def test_ranked_hub_table_honors_ter_and_rounded_ties():

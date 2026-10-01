@@ -1,6 +1,6 @@
 {
   "owner": "Iman998",
-  "public": true,
+  "public": false,
   "staging_root": "runs/hub/repositories",
   "scratch_root": "runs/hub/work",
   "repositories": [

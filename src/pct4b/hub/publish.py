@@ -127,7 +127,11 @@ def publish(config: dict, key: str, execute: bool = False, token_file: Path | No
     state_path = Path(config["scratch_root"]) / key / "upload_state.json"
     state = json.loads(state_path.read_text()) if state_path.exists() else {"uploaded": {}}
     try:
-        api.repo_info(entry["repo_id"], repo_type=entry["repo_type"])
+        existing = api.repo_info(entry["repo_id"], repo_type=entry["repo_type"])
+        if not config.get("public", False) and not existing.private:
+            api.update_repo_settings(entry["repo_id"], repo_type=entry["repo_type"], private=True)
+            if not api.repo_info(entry["repo_id"], repo_type=entry["repo_type"]).private:
+                raise RuntimeError(f"Could not make {entry['repo_id']} private")
         created = False
     except RepositoryNotFoundError:
         api.create_repo(entry["repo_id"], repo_type=entry["repo_type"], private=True)
@@ -213,8 +217,10 @@ def publish(config: dict, key: str, execute: bool = False, token_file: Path | No
     for name in names:
         if not remote_matches(folder / name, remote.get(name), expected_hash[name]):
             raise RuntimeError(f"Remote file verification failed: {name}")
-    if config.get("public", True):
+    if config.get("public", False):
         api.update_repo_settings(entry["repo_id"], repo_type=entry["repo_type"], private=False)
+    elif not api.repo_info(entry["repo_id"], repo_type=entry["repo_type"]).private:
+        raise RuntimeError(f"Repository is not private: {entry['repo_id']}")
     result = {
         "published": True,
         "repo_id": entry["repo_id"],
@@ -222,7 +228,7 @@ def publish(config: dict, key: str, execute: bool = False, token_file: Path | No
         "revision": remote_info.sha,
         "files": len(names),
         "new_repository": created,
-        "public": config.get("public", True),
+        "public": config.get("public", False),
     }
     atomic_json(Path(config["scratch_root"]) / key / "published.json", result)
     return result

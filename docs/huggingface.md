@@ -34,7 +34,7 @@ hexabee-hub upload --config runs/release.local.json --only prompts --execute
 
 `HF_TOKEN` is also supported. For an automated job, `--token-file /private/path/token` reads a credential file outside the staging directory. Never add a token to a JSON configuration or commit it to Git. The uploader checks the authenticated username against `owner`.
 
-New repositories are created privately. The uploader sends only files listed in the manifest, in batches of 20. It verifies remote size and LFS SHA-256 or Git object hash before making a repository public. Re-running the same command compares actual remote objects and resumes missing or changed files. Local batch state is diagnostic, not sufficient proof that a remote file still matches.
+The committed release configuration keeps every repository **private** (`"public": false`). New repositories are created privately, and an existing repository is made private before any upload begins. The uploader sends only files listed in the manifest, in batches of 20, then verifies remote size and LFS SHA-256 or Git object hash. Re-running the same command compares actual remote objects and resumes missing or changed files. Local batch state is diagnostic, not sufficient proof that a remote file still matches. Change `public` only when you intentionally approve a public release.
 
 Preparation resumes at **completed source partitions**, validating their shard hashes. An interrupted partial partition is rebuilt. Changing a completed source's size/mtime, schema, or conversion recipe requires a new destination. Preparation is streaming and produces Zstandard-compressed Parquet shards of up to 25,000 rows. Reserve disk for compressed data, model staging if hard links are unavailable, and temporary partial partitions.
 
@@ -87,16 +87,14 @@ The PT corpus contains five registered language sources; the final translation e
 
 ## Update cards and create a collection
 
-After an upload has finished, edit the public descriptions in your configuration and run:
+After an upload has finished, edit the card descriptions in your configuration and run:
 
 ```bash
 hexabee-hub refresh-card --config runs/release.local.json --only model
 hexabee-hub upload --config runs/release.local.json --only model --execute
-hexabee-hub collection --config runs/release.local.json
-hexabee-hub collection --config runs/release.local.json --execute
 ```
 
-Card refresh preserves existing data and weight shards and updates the manifest for changed metadata. The collection command checks that every configured repository was verified and is public, then groups the independent repositories in a yellow-themed collection. Both upload and collection remain dry runs unless `--execute` is present.
+Card refresh preserves existing data and weight shards and updates the manifest for changed metadata. The collection command requires every configured repository to be verified and public, so defer it until the public release is approved. Card upload remains a dry run unless `--execute` is present.
 
 The Hub card builder stages the included banner and overview images during preparation or refresh. `scripts/build_hub_card_visuals.py` can regenerate the overview panels with Pillow. Evaluation figures are included in `figures/` and can be regenerated with `python scripts/build_paper_figures.py` inside a Slurm CPU job. The images support navigation and explanation; the numeric evidence remains in `results/paper/`.
 
