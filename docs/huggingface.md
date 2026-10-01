@@ -127,7 +127,7 @@ The `upload_policy` configuration controls these defaults:
 | `max_restart_delay_seconds` | 300 | Maximum delay for ordinary restarts |
 | `blocked_retry_seconds` | 900 | Recheck interval for errors requiring a fix |
 
-Each repository may set `upload_batch_files` (default 20) and `upload_workers` (default 4). The active phase-2 release uses five files per batch and two parallel transfers. The HTTP/LFS path supports the explicit timeouts; Xet has its own networking stack. A remote storage service can still close an idle socket independently of client settings; the supervisor resumes after that failure.
+Each repository may set `upload_batch_files` (default 20) and `upload_workers` (default 4). The phase-2 SFT release uses 40 files per commit and four parallel LFS transfers. The uploader waits for preuploads to fill a batch, reducing commit-rate throttling; a 429 response may still require waiting for the Hub quota window to reset. The HTTP/LFS path supports the explicit timeouts; Xet has its own networking stack. A remote storage service can still close an idle socket independently of client settings; the supervisor resumes after that failure.
 
 The work directory contains:
 
