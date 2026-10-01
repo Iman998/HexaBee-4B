@@ -72,7 +72,14 @@ print(processor.decode(output[0, inputs["input_ids"].shape[1]:], skip_special_to
 The processor must preserve Gemma 3's system/user formatting. This short example uses a new 512-token generation budget; the archived evaluation used its own recorded inference settings.'''
 
 
-def build_card(entry: dict, all_entries: list[dict], stats: dict, configs: list[dict]) -> str:
+def build_card(
+    entry: dict,
+    all_entries: list[dict],
+    stats: dict,
+    configs: list[dict],
+    visuals: set[str] | None = None,
+) -> str:
+    visuals = visuals or set()
     is_model = entry["repo_type"] == "model"
     metadata = {
         "language": entry.get("languages", LANGUAGES),
@@ -122,13 +129,13 @@ def build_card(entry: dict, all_entries: list[dict], stats: dict, configs: list[
             if configs and entry["kind"] != "metrics"
             else "Safetensors + processor"
             if is_model
-            else "CSV / JSON + figures",
+            else "CSV / JSON" + (" + figures" if "target_comparison.png" in visuals else ""),
         ),
         ("Release", "Audited historical artifacts"),
         ("Model family", "HexaBee-4B / Gemma 3"),
     ]
     table = "| Property | Value |\n|:--|:--|\n" + "\n".join(f"| {k} | {v} |" for k, v in facts)
-    navigation = "[Overview](#overview) · [Quick start](#quick-start) · [Contents](#contents) · [Provenance](#provenance) · [Limitations](#limitations) · [Release family](#release-family) · [Code & paper](https://github.com/Iman998/HexaBee-4B)"
+    navigation = "[Overview](#overview) · [Quick start](#quick-start) · [Contents](#contents) · [Provenance](#provenance) · [Limitations](#limitations) · [Release family](#release-family) · [Research code](https://github.com/Iman998/HexaBee-4B)"
     family = "| Artifact | Repository |\n|:--|:--|\n" + "\n".join(
         f"| {e['title']} | [{e['repo_id']}]({url(e)}) |" for e in all_entries
     )
@@ -147,15 +154,14 @@ path = snapshot_download("{entry["repo_id"]}", repo_type="dataset")
     if configs and entry["kind"] != "metrics":
         integrity += " Data files use bounded Parquet shards; original strings and empty outputs are preserved in historical exports."
     figures = ""
-    if stats.get("benchmark"):
-        prefix = (
-            "figures/"
-            if entry["kind"] == "metrics"
-            else "https://huggingface.co/datasets/Iman998/HexaBee-Evaluation/resolve/main/figures/"
-        )
-        figures = f"![Scores by target language]({prefix}target_comparison.png)\n"
-        if entry["kind"] == "metrics":
-            figures += f"\n![Direction-level gains over both baselines]({prefix}direction_gains_both.png)\n\n![Judge rubric comparison]({prefix}judge_rubric_profile.png)\n"
+    if stats.get("benchmark") and entry["kind"] == "metrics":
+        for name, label in (
+            ("target_comparison.png", "Scores by target language"),
+            ("direction_gains_both.png", "Direction-level gains"),
+            ("judge_rubric_profile.png", "Judge rubric comparison"),
+        ):
+            if name in visuals:
+                figures += f"![{label}](figures/{name})\n\n"
     coverage = ""
     if configs:
         coverage = (
@@ -166,9 +172,19 @@ path = snapshot_download("{entry["repo_id"]}", repo_type="dataset")
                 for c in configs
             )
         )
+    banner = (
+        f'<img src="assets/banner.png" alt="{html.escape(entry["title"])}" width="100%">'
+        if "banner.png" in visuals
+        else ""
+    )
+    overview = (
+        f"![Visual summary for {html.escape(entry['title'])}](assets/overview.png)"
+        if "overview.png" in visuals
+        else ""
+    )
     return (
         front
-        + f'''<img src="assets/banner.png" alt="{html.escape(entry["title"])} — HexaBee visual identity" width="100%">
+        + f"""{banner}
 
 # {entry["title"]}
 
@@ -182,7 +198,7 @@ path = snapshot_download("{entry["repo_id"]}", repo_type="dataset")
 
 {entry["description"]}
 
-![Three visual summary cards for {html.escape(entry["title"])}: see the facts and detailed sections below](assets/overview.png)
+{overview}
 
 {table}
 
@@ -223,16 +239,16 @@ Each phase, checkpoint, prompt inventory, output archive and evaluation result h
 
 ## License and attribution
 
-See [LICENSE.md](LICENSE.md). Model weights remain under Gemma terms; upstream dataset and service terms are not replaced by this repository's software license. The illustrated branding is decorative and does not encode experimental evidence.
+See [LICENSE.md](LICENSE.md). Model weights remain under Gemma terms; upstream dataset and service terms are not replaced by this repository's software license.
 
 ## Citation and references
 
-**HexaBee: A Six-Language Translator with Multilingual Answering and Bidirectional Supervision.** [Read the submission draft](https://github.com/Iman998/HexaBee-4B/blob/main/paper/HexaBee-4B_WAT2026.pdf) and [browse the reproducibility code](https://github.com/Iman998/HexaBee-4B). Final publication metadata will be added when available.
+**HexaBee: A Six-Language Translator with Multilingual Answering and Bidirectional Supervision.** [Browse the research code](https://github.com/Iman998/HexaBee-4B). Final publication metadata will be added when available.
 
-Related methods and tools: [Gemma 3](https://arxiv.org/abs/2503.19786), [LoRA](https://arxiv.org/abs/2106.09685), [LLaMA-Factory](https://aclanthology.org/2024.acl-demos.38/), [SacreBLEU](https://aclanthology.org/W18-6319/), [COMET](https://aclanthology.org/2020.emnlp-main.213/). Full paper references are distributed with the reproducibility code.
+Related methods and tools: [Gemma 3](https://arxiv.org/abs/2503.19786), [LoRA](https://arxiv.org/abs/2106.09685), [LLaMA-Factory](https://aclanthology.org/2024.acl-demos.38/), [SacreBLEU](https://aclanthology.org/W18-6319/), [COMET](https://aclanthology.org/2020.emnlp-main.213/).
 
 ---
 
 <p align="center">⬡ <strong>HexaBee-4B</strong> · FA · EN · AR · ZH · HE · ES<br>Maintained by <a href="https://huggingface.co/Iman998">Iman998</a></p>
-'''
+"""
     )

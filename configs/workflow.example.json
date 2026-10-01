@@ -1,0 +1,29 @@
+{
+  "run_dir": "runs/experiment-01",
+  "pretrain_text": [
+    "data/wiki_fa.jsonl",
+    "data/wiki_en.jsonl",
+    "data/wiki_ar.jsonl",
+    "data/wiki_zh.jsonl"
+  ],
+  "wikipedia_qa": "data/wiki_questions.jsonl",
+  "aligned_pairs": "data/aligned_pairs.jsonl",
+  "prompt_pools": "data/prompt_pools.jsonl",
+  "qa_recipe": "configs/qa_multilingual.json",
+  "base_model": "google/gemma-3-4b-it",
+  "test_fraction": 0.1,
+  "seed": 42,
+  "predictions": [
+    "data/predictions/gemma4.jsonl",
+    "data/predictions/gemma12.jsonl",
+    "data/predictions/hexabee.jsonl"
+  ],
+  "judge_predictions": [
+    "data/predictions/gemma4_judged.jsonl",
+    "data/predictions/gemma12_judged.jsonl",
+    "data/predictions/hexabee_judged.jsonl"
+  ],
+  "focus_model": "HexaBee-4B",
+  "baseline_models": ["Gemma 3 4B IT", "Gemma 3 12B IT"],
+  "bootstrap_replicates": 10000
+}

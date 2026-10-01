@@ -10,7 +10,7 @@ mkdir -p runs
 cp configs/hub/release.json runs/release.local.json
 ```
 
-Edit the copy to point `source` and `sources[].path` at your archived artifacts. Relative paths resolve from the working directory. The committed configuration uses portable example paths; it contains no local credentials. `brand_assets` points at the included `assets/brand/` directory.
+Edit the copy to point `source` and `sources[].path` at your archived artifacts. Relative paths resolve from the working directory. The committed configuration uses portable example paths; it contains no local credentials. Optional Hub-only visuals can be kept **outside Git** at `<visual_assets>/<repository-key>/banner.png` and `overview.png`, then selected with `visual_assets` in the local config. Cards without those files render correctly as text. Previously published Hub images remain in their Hub repositories.
 
 ```bash
 hexabee-hub list --config runs/release.local.json
@@ -98,7 +98,7 @@ hexabee-hub collection --config runs/release.local.json --execute
 
 Card refresh preserves existing data and weight shards and updates the manifest for changed metadata. The collection command checks that every configured repository was verified and is public, then groups the independent repositories in a yellow-themed collection. Both upload and collection remain dry runs unless `--execute` is present.
 
-Each card's colorful overview panel is stored in `src/pct4b/assets/hub-overviews/` and staged as `assets/overview.png`. Its figures come from the archived release statistics. To change the visual design, run `python scripts/build_hub_card_visuals.py` in an environment with Pillow, review all 11 PNGs, then refresh the cards. The PNGs are included in the package so publishing does not require Pillow.
+The Hub card builder can stage visuals from the external `visual_assets` directory during preparation or refresh. The research code repository intentionally does not package image binaries. For optional evaluation figures, generate them with `python scripts/build_paper_figures.py` inside a Slurm CPU job and set the evaluation entry's `figures` path in your local Hub config before preparing that release.
 
 
 If Xet uploads repeatedly time out on a network, stop that uploader before retrying the same repository through the supported HTTP/LFS path:

@@ -17,11 +17,5 @@ jobs:
       - run: ruff check src scripts tests
       - run: ruff format --check src scripts tests
       - run: pytest -q
-      - run: python scripts/reproduce_paper.py --plots
-      - run: python scripts/build_paper_figures.py
-      - uses: actions/upload-artifact@v4
-        with:
-          name: paper-artifacts-${{ matrix.python-version }}
-          path: |
-            runs/paper/
-            figures/
+      - run: python scripts/run_workflow.py --config configs/workflow.demo.json --stage all
+      - run: python scripts/package_release.py --output runs/hexabee-code.zip

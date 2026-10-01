@@ -2,12 +2,13 @@
 
 | Workflow | Available in this release | Additional inputs needed |
 |:--|:--|:--|
-| Offline end-to-end demo | Code, six-language fixtures, mock scores | Python dependencies |
-| Paper tables and eight figure families | Numeric results, training trace, plotting code | Metrics/plot dependencies |
+| Offline preparation and evaluation demo | Code, six-language fixtures, mock scores | Python dependencies |
+| Numeric tables and on-demand figure generation | Numeric results, training trace, plotting code | Metrics/plot dependencies |
 | Paired judge intervals | 900 score rows; identity/direction labels; seed | NumPy |
 | Full raw-output metric calculation | Pinned metric implementation and CLI | Original source/reference/candidate files; COMET checkpoint for COMET |
 | Historical QA/answer-translation construction | 329 policies and retained component counts | Original ordered partitions and exact prompt pools |
 | New multilingual/synthetic generation | Configurable cached pipelines | Input data and a configured teacher endpoint |
+| New phase-1 PT experiment | Raw-text registration, clearly labeled starter YAML, Slurm job | Raw text, Gemma base, compatible LLaMA-Factory environment, GPUs |
 | Stage-2/3 training and merges | Portable YAML, registration/merge scripts, saved final adapter settings | LLaMA-Factory environment, data, preceding checkpoint/adapter, GPUs |
 | Bit-identical model reconstruction from public base | Not established | Missing complete stage-1 recipe and immutable historical service/training provenance |
 

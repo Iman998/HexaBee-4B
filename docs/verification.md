@@ -1,15 +1,24 @@
-# Release verification
+# Verification record
 
-Verified locally on 2026-09-12 with CPython 3.11.7; exact installed package versions are recorded in `requirements-tested.txt`.
+On 2026-10-02, the code-only source archive was extracted in the user's Maxwell project directory and checked inside a bounded `general` Slurm CPU allocation. The validation environment used Python 3.12 with `.[metrics,plots,hub,dev]` installed from the internal Nexus mirror.
 
-- 34 offline tests passed, including strict identity pairing, missing/duplicate records, valid zero scores, retry/cache behavior, placeholder preservation, source-group splitting, historical replay policies, mock COMET scaling/truncation, CLI execution, and training-config rendering.
-- Ruff lint and formatting checks passed.
-- Every command in the README offline example completed successfully. Wheel installation loaded both the CLI and all 36 packaged prompt seeds outside the source checkout.
-- Paper reconstruction verified 90 system/direction rows, recomputed 270 metric values from released sufficient statistics, checked all 329 data component counts, and reproduced the four paired mean-difference intervals.
-- The new archive importer and bootstrap were run on all 900 original judge output rows. Their means and intervals matched the paper. Original texts remain outside the release.
-- A 100-row sample from the original Wikipedia export produced 2,866 SFT records with the default scalable recipe. Missing variants were counted and skipped. This smoke-test count is not a claim about the full historical mixture.
-- All 341,142 non-hidden original prompt rows were imported, with six component types and direction-conditioned translation metadata. A historical QA rule also ran on the 100-row sample.
-- All eight figure families were regenerated as PDF/SVG/PNG. Combined full-test and judge tables compiled into an eight-page preview with no overfull boxes.
-- The release ZIP is built from an explicit allowlist with a per-file SHA-256 manifest. Virtual environments, source datasets, model weights, raw prediction/judge texts, API caches, and local runs are excluded.
+| Check | Result |
+|:--|:--|
+| Ruff lint | Passed |
+| Ruff formatting | 39 files formatted |
+| Offline pytest suite | 58 passed |
+| `run_workflow.py --stage all` | Completed preparation, five trainer/export configs, metrics, bootstrap, report, and numeric verification |
+| Archived evidence check | 90 system/direction rows and 329 construction components verified |
+| Figure generation from code | Eight figure families regenerated on demand; generated files remain outside Git |
+| Code-only package | 114 source files, no images, PDFs, or manuscript archive |
 
-The local checks do not include hosted teacher generation, GPU training, or a fresh neural COMET pass. Those pathways require the documented external inputs and environments. The COMET wrapper is covered by a mocked integration test; the shipped neural scores are the previously computed paper artifacts.
+The workflow demo produced 43 phase-2 SFT rows and 50 forward/reverse translation rows from deliberately tiny fixtures. Its scores are artificial. GPU training, hosted teacher generation, inference against the final model, and a fresh COMET pass were not part of this offline check; their inputs and environment requirements are documented in the stage guides.
+
+To repeat the checks:
+
+```bash
+sbatch jobs/workflow.sbatch configs/workflow.demo.json all
+sbatch jobs/cli.sbatch pytest -q
+sbatch jobs/cli.sbatch ruff check src scripts tests
+sbatch jobs/cli.sbatch ruff format --check src scripts tests
+```

@@ -132,6 +132,8 @@ def test_dataset_card_has_standalone_configuration_and_not_merged_scope():
     assert "341,142" in text and "config_name: prompts" in text
     assert 'load_dataset("Iman998/HexaBee-System-Prompts", "prompts"' in text
     assert "TODO" not in text
+    assert "assets/banner.png" not in text
+    assert "assets/overview.png" not in text
 
 
 def test_release_path_traversal_is_rejected(tmp_path):

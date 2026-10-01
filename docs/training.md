@@ -1,6 +1,6 @@
 # Training and checkpoint lineage
 
-Training is performed by LLaMA-Factory in a separate GPU environment. This package writes configurations and data registration files; it does not wrap or silently launch a trainer.
+Training is performed by LLaMA-Factory in a separate GPU environment. This package writes configurations and data registration files. The explicit Slurm job in [workflow.md](workflow.md) launches a requested stage; data preparation never starts training on its own.
 
 ## Recorded sequence
 
@@ -20,9 +20,14 @@ The historical validation fraction was 0.00001; the final stage had 658,267 trai
 
 ## Prepare and register data
 
-First use `pct4b export-sft` on a constructed dataset. A rendered configuration registers the `instruct`, `output`, and `system` columns explicitly; no user-specific absolute paths are embedded in the distributed templates.
+First use `pct4b export-sft` on a constructed dataset. A rendered configuration registers the `instruct`, `output`, and `system` columns explicitly; no user-specific absolute paths are embedded in the distributed templates. The PT renderer registers one or more files containing a `text` column, following the [LLaMA-Factory dataset format](https://github.com/hiyouga/LlamaFactory/blob/main/data/README.md#pre-training-dataset).
 
 ```bash
+python scripts/render_training.py --stage pretrain \
+  --model models/gemma-3-4b-it --dataset-dir data \
+  --dataset-file wiki_fa.jsonl --dataset-file wiki_en.jsonl \
+  --training-output adapters/wikipedia --config-output runs/train_pretrain.yaml
+
 python scripts/render_training.py --stage multilingual \
   --model models/gemma-3-4b-it --adapter adapters/wikipedia \
   --dataset-dir data --dataset-file phase2_train.jsonl \
@@ -43,9 +48,10 @@ python scripts/render_merge.py --model models/multilingual \
 
 Keep the two model/adapter merge pairs correct: the final adapter is merged into the already-merged multilingual model. Rendered files include an absolute path to a copied DeepSpeed ZeRO-0 configuration. The dataset registration updates preserve other existing dataset entries.
 
-From a compatible LLaMA-Factory checkout/environment, launch each stage only after its required inputs/checkpoints exist:
+From a compatible LLaMA-Factory checkout/environment, launch each stage only after its required inputs/checkpoints exist. On Maxwell, submit [the typed-GPU Slurm jobs](workflow.md#3-train-and-merge). Their command sequence is:
 
 ```bash
+FORCE_TORCHRUN=1 NPROC_PER_NODE=1 llamafactory-cli train runs/train_pretrain.yaml
 FORCE_TORCHRUN=1 NPROC_PER_NODE=6 llamafactory-cli train runs/train_multilingual.yaml
 llamafactory-cli export runs/merge_multilingual.yaml
 FORCE_TORCHRUN=1 NPROC_PER_NODE=2 llamafactory-cli train runs/train_translation.yaml
@@ -56,6 +62,6 @@ Those are GPU training/export commands, not part of the offline tests. Paths are
 
 ## Environment and reconstruction limits
 
-The stage-1 card records PEFT 0.15.2, Transformers 4.52.4, PyTorch 2.7.1+cu126, Datasets 3.6.0, and Tokenizers 0.21.1. The exact old LLaMA-Factory checkout and full stage-1 trainer YAML are not supplied in the public package; a current trainer may handle Gemma module targeting or templates differently. Preserve the original checkpoint/configuration to reproduce that stage exactly. The release starts executable SFT configuration from the supplied Wikipedia adapter; it does not invent the missing stage-1 recipe or claim bit-identical weights from a fresh setup.
+The stage-1 card records PEFT 0.15.2, Transformers 4.52.4, PyTorch 2.7.1+cu126, Datasets 3.6.0, and Tokenizers 0.21.1. The exact old LLaMA-Factory checkout and full stage-1 trainer YAML are not supplied in the public package; a current trainer may handle Gemma module targeting or templates differently. `configs/train_pretrain.yaml` is a **new-experiment starting point**, using the recorded seed and broad hyperparameters but a conservative per-device batch and explicit LoRA settings. It must not be presented as the historical stage-1 run. Preserve the original checkpoint/configuration to reproduce that stage exactly. The stage-2/3 templates represent the recorded configuration, with the saved adapter configuration taking precedence where a continued adapter is concerned.
 
 For a new experiment, save the trainer commit, full resolved YAML, tokenizer revision, initial model revision, adapter configuration, exact split membership, and software environment with the run. Existing archived weights and data membership are needed for exact historical scoring; new hash-based construction is a reproducible reimplementation, not the historical random state.

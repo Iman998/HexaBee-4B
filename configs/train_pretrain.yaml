@@ -1,0 +1,27 @@
+# Runnable new-experiment starting point. The historical phase-1 YAML is unavailable.
+model_name_or_path: MODEL_PATH
+stage: pt
+do_train: true
+finetuning_type: lora
+dataset: DATASETS
+dataset_dir: DATASET_DIRECTORY
+template: gemma3
+cutoff_len: 4096
+output_dir: OUTPUT_DIRECTORY
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 64
+learning_rate: 0.0001
+num_train_epochs: 1.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.05
+bf16: true
+gradient_checkpointing: true
+seed: 111
+lora_rank: 256
+lora_alpha: 512
+lora_dropout: 0.005
+lora_target: all
+freeze_vision_tower: true
+deepspeed: DEEPSPEED_CONFIG
+logging_steps: 10
+save_steps: 1000

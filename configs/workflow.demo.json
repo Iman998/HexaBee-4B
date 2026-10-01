@@ -1,0 +1,13 @@
+{
+  "run_dir": "runs/demo",
+  "pretrain_text": ["examples/pretrain.jsonl"],
+  "wikipedia_qa": "examples/wiki.jsonl",
+  "aligned_pairs": "examples/pairs.jsonl",
+  "prompt_pools": null,
+  "base_model": "google/gemma-3-4b-it",
+  "predictions": ["examples/demo_a.jsonl", "examples/demo_b.jsonl"],
+  "judge_predictions": ["examples/demo_a.jsonl", "examples/demo_b.jsonl"],
+  "focus_model": "demo_b",
+  "baseline_models": ["demo_a"],
+  "bootstrap_replicates": 100
+}

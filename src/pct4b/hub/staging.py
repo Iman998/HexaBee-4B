@@ -45,10 +45,6 @@ def copy_file(source: Path, destination: Path) -> None:
         shutil.copy2(source, destination)
 
 
-def overview_source(key: str) -> Path:
-    return Path(__file__).resolve().parents[1] / "assets" / "hub-overviews" / f"{key}.png"
-
-
 def sanitize_config(data):
     if isinstance(data, dict):
         return {
@@ -215,9 +211,12 @@ def prepare(config: dict, key: str) -> Path:
         stats, configs = stage_data(entry, destination, scratch)
     if key == "model":
         add_model_benchmark(config, stats)
-    assets = Path(config["brand_assets"])
-    copy_file(assets / entry["banner"], destination / "assets/banner.png")
-    copy_file(overview_source(key), destination / "assets/overview.png")
+    visual_root = config.get("visual_assets")
+    if visual_root:
+        for name in ("banner.png", "overview.png"):
+            source = Path(visual_root) / key / name
+            if source.is_file():
+                copy_file(source, destination / "assets" / name)
     license_text = (
         "# Model terms\n\nThese weights derive from Gemma 3 and remain subject to the "
         "[Gemma Terms of Use](https://ai.google.dev/gemma/terms) and prohibited-use policy. "
@@ -231,7 +230,9 @@ def prepare(config: dict, key: str) -> Path:
     )
     (destination / "LICENSE.md").write_text(license_text)
     atomic_json(destination / "release_stats.json", stats)
-    (destination / "README.md").write_text(build_card(entry, entries, stats, configs))
+    visuals = {p.name for p in (destination / "assets").glob("*.png")}
+    visuals.update(p.name for p in (destination / "figures").glob("*.png"))
+    (destination / "README.md").write_text(build_card(entry, entries, stats, configs, visuals))
     manifest = {
         "repo_id": entry["repo_id"],
         "repo_type": entry["repo_type"],
@@ -282,15 +283,28 @@ def refresh_card(config: dict, key: str) -> Path:
             partitions=metric_partitions(destination),
         )
     atomic_json(destination / "release_stats.json", stats)
+    visual_root = config.get("visual_assets")
+    if visual_root:
+        for name in ("banner.png", "overview.png"):
+            source = Path(visual_root) / key / name
+            if source.is_file():
+                target = destination / "assets" / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(source, target)
+    visuals = {p.name for p in (destination / "assets").glob("*.png")}
+    visuals.update(p.name for p in (destination / "figures").glob("*.png"))
     (destination / "README.md").write_text(
-        build_card(entry, config["repositories"], stats, metadata.get("configs", []))
+        build_card(entry, config["repositories"], stats, metadata.get("configs", []), visuals)
     )
-    overview = destination / "assets" / "overview.png"
-    overview.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(overview_source(key), overview)
-    for name in ("README.md", "release_stats.json", "assets/overview.png"):
+    for name in ("README.md", "release_stats.json"):
         path = destination / name
         manifest["files"][name] = {"bytes": path.stat().st_size, "sha256": file_hash(path)}
+    for name in visuals & {"banner.png", "overview.png"}:
+        path = destination / "assets" / name
+        manifest["files"][f"assets/{name}"] = {
+            "bytes": path.stat().st_size,
+            "sha256": file_hash(path),
+        }
     atomic_json(manifest_path, manifest)
     return destination
 

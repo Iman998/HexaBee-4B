@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pct4b-reproducibility"
 version = "0.1.0"
-description = "Multilingual answering, translation evaluation, and artifact publication for HexaBee-4B"
+description = "Reproducible data, training configuration, and evaluation code for HexaBee-4B"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
@@ -26,7 +26,7 @@ hexabee-hub = "pct4b.hub.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 [tool.setuptools.package-data]
-pct4b = ["assets/*.json", "assets/*.txt", "assets/hub-overviews/*.png"]
+pct4b = ["assets/*.json", "assets/*.txt"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 [tool.ruff]

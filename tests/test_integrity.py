@@ -246,3 +246,35 @@ def test_training_render_preserves_registry_and_resolves_paths(tmp_path):
     assert "existing" in info and "pct_translation" in info
     assert "DEEPSPEED_CONFIG" not in output.read_text() and "MODEL_PATH" not in output.read_text()
     assert (output.parent / "ds_z0_config.json").exists()
+
+
+def test_pretraining_render_registers_multiple_text_sources(tmp_path):
+    write_records(tmp_path / "fa.jsonl", [{"text": "Persian source"}])
+    write_records(tmp_path / "en.jsonl", [{"text": "English source"}])
+    output = tmp_path / "config/pretrain.yaml"
+    subprocess.run(
+        [
+            sys.executable,
+            str(ROOT / "scripts/render_training.py"),
+            "--stage",
+            "pretrain",
+            "--model",
+            "google/gemma-3-4b-it",
+            "--dataset-dir",
+            str(tmp_path),
+            "--dataset-file",
+            "fa.jsonl",
+            "--dataset-file",
+            "en.jsonl",
+            "--training-output",
+            str(tmp_path / "adapter"),
+            "--config-output",
+            str(output),
+        ],
+        check=True,
+        capture_output=True,
+    )
+    registry = json.loads((tmp_path / "dataset_info.json").read_text())
+    assert registry["pct_pretrain_00"]["columns"] == {"prompt": "text"}
+    assert registry["pct_pretrain_01"]["file_name"] == "en.jsonl"
+    assert 'dataset: "pct_pretrain_00,pct_pretrain_01"' in output.read_text()

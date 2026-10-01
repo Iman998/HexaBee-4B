@@ -17,7 +17,6 @@ TOP_LEVEL = {
     "pyproject.toml",
     ".gitignore",
     ".env.example",
-    "references.bib",
     "requirements-tested.txt",
 }
 DIRECTORIES = {
@@ -28,9 +27,7 @@ DIRECTORIES = {
     "tests",
     "examples",
     "results",
-    "figures",
-    "paper",
-    "assets",
+    "jobs",
     ".github",
 }
 SUFFIXES = {
@@ -42,10 +39,7 @@ SUFFIXES = {
     ".txt",
     ".yaml",
     ".yml",
-    ".pdf",
-    ".svg",
-    ".png",
-    ".zip",
+    ".sbatch",
 }
 
 
