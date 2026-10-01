@@ -109,6 +109,10 @@ def stage_model(entry: dict, destination: Path) -> dict:
 
 
 def stage_data(entry: dict, destination: Path, scratch: Path) -> tuple[dict, list[dict]]:
+    if entry.get("consolidate_from"):
+        from .consolidate import stage_consolidated
+
+        return stage_consolidated(entry, destination, scratch)
     sources = list(entry.get("sources", []))
     if entry["kind"] == "prompts":
         from ..prompts import import_pools

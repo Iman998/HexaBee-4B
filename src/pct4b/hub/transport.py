@@ -36,7 +36,7 @@ def configure_transport(settings: dict) -> None:
         return httpx.Client(
             timeout=timeout,
             follow_redirects=True,
-            limits=httpx.Limits(max_connections=8, max_keepalive_connections=4),
+            limits=httpx.Limits(max_connections=32, max_keepalive_connections=16),
             event_hooks={"request": [enforce_timeouts]},
         )
 

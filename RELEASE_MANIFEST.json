@@ -567,29 +567,37 @@
     "sha256": "a8f99dbc35ff67ce9b9384e45370d2396b3b2841ee9eed01ab4f58a2712312e1",
     "bytes": 2059
   },
+  "src/pct4b/hub/consolidate.py": {
+    "sha256": "b040b3cc69b7fcc70115f0b36064b80c799fab42279b3782b3ad7e067ed2c0ce",
+    "bytes": 5795
+  },
   "src/pct4b/hub/evidence.py": {
     "sha256": "97fb8f40f110a58400dbf6ffe9123a0708ffbf525a02fc006b7e4a369f42b487",
     "bytes": 4566
+  },
+  "src/pct4b/hub/parallel.py": {
+    "sha256": "3e819c361009c750c90bb51fb68cf15a2a74eb5dbfba8e520a8e219ee518cf7b",
+    "bytes": 5057
   },
   "src/pct4b/hub/parquet.py": {
     "sha256": "28a78c22306e5c6c949692c69426c8119ce00d757223d361b1ae60dcb2888d69",
     "bytes": 6528
   },
   "src/pct4b/hub/publish.py": {
-    "sha256": "5155c06e453d543055986e6bd95cb129345f6c84c51f3e91f153c7839e0a36d4",
-    "bytes": 8886
+    "sha256": "81bab3cba84d83d1214a3d674508820a50be5830181da18d561188a8baea0ed9",
+    "bytes": 9339
   },
   "src/pct4b/hub/staging.py": {
-    "sha256": "2d9f92366176cd7d24edab6e7544e4b38b5876173a4031a64208624972d7a191",
-    "bytes": 12866
+    "sha256": "72a592d559fd9e9d77d4b601c57fe067b7052c920ade6f6ebc65943095e6469a",
+    "bytes": 13020
   },
   "src/pct4b/hub/supervisor.py": {
     "sha256": "9745d012f4a45b71452865e2450586e40edb0d06125db6697ac2579f94d34ba2",
     "bytes": 7459
   },
   "src/pct4b/hub/transport.py": {
-    "sha256": "b4be713f0255516a73e3dbfd81fc052115a8bc470c3ad0acc95daed39baef657",
-    "bytes": 1720
+    "sha256": "0a7dce27e330d23fcb25235d966d84bd0795b20a568051861473fa308cc70c2b",
+    "bytes": 1722
   },
   "src/pct4b/io.py": {
     "sha256": "43da714bf4b98cfd2374c3e4edb1dd6f7fcbc99b58b9bfac95d7499d668a0b8a",
@@ -610,6 +618,10 @@
   "src/pct4b/schema.py": {
     "sha256": "74520f56bfc2d4d7f04810337f5bdd42940fc19ad12232b338755cb7ed5de1cc",
     "bytes": 5609
+  },
+  "tests/test_hub_parallel.py": {
+    "sha256": "331352a8a301003a685ece80cc475ead8d531991161f437798c8ae2c080c4687",
+    "bytes": 1755
   },
   "tests/test_hub_release.py": {
     "sha256": "2b904d2e00071dda2d17f7828031a2eac81b0a2461eece886c3bec083849bff7",

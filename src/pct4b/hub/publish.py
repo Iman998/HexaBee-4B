@@ -151,11 +151,21 @@ def publish(config: dict, key: str, execute: bool = False, token_file: Path | No
         if not remote_matches(folder / name, remote.get(name), expected_hash[name])
     ]
     state["repo_id"] = entry["repo_id"]
+    # Reconcile from server hashes so restarts report already committed files accurately.
+    state["uploaded"] = {n: expected_hash[n] for n in names if n not in pending}
+    atomic_json(state_path, state)
     revision = None
     batch_size = int(entry.get("upload_batch_files", 20))
     workers = int(entry.get("upload_workers", 4))
-    if not 1 <= batch_size <= 100 or not 1 <= workers <= 8:
-        raise ValueError("Upload batch must be 1–100 files and workers 1–8")
+    if not 1 <= batch_size <= 100 or not 1 <= workers <= 16:
+        raise ValueError("Upload batch must be 1–100 files and workers 1–16")
+    if entry.get("upload_mode") == "parallel":
+        from .parallel import upload_parallel
+
+        upload_parallel(
+            api, entry, folder, pending, expected_hash, state, state_path, workers, batch_size
+        )
+        pending = []
     for start in range(0, len(pending), batch_size):
         batch = pending[start : start + batch_size]
         for attempt in range(3):
