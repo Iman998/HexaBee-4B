@@ -1,0 +1,80 @@
+{
+  "final_total": 30153404,
+  "by_task": {
+    "complete": {
+      "total": 15028050,
+      "same_language": 10622263,
+      "cross_language": 4405787
+    },
+    "balance": {
+      "total": 509239,
+      "same_language": 278273,
+      "cross_language": 230966
+    },
+    "formal": {
+      "total": 2516986,
+      "same_language": 1696542,
+      "cross_language": 820444
+    },
+    "informal": {
+      "total": 1404057,
+      "same_language": 1101448,
+      "cross_language": 302609
+    },
+    "translate": {
+      "total": 10695072,
+      "same_language": 0,
+      "cross_language": 10695072
+    }
+  },
+  "retained_by_family": {
+    "gqa_a": {
+      "complete": 2951728,
+      "balance": 0,
+      "formal": 0,
+      "informal": 0,
+      "translate": 1757216
+    },
+    "qa_a": {
+      "complete": 5877201,
+      "balance": 0,
+      "formal": 1063425,
+      "informal": 0,
+      "translate": 4508930
+    },
+    "title_a": {
+      "complete": 3069029,
+      "balance": 0,
+      "formal": 646570,
+      "informal": 560356,
+      "translate": 2103474
+    },
+    "gqa_b": {
+      "complete": 1000829,
+      "balance": 208364,
+      "formal": 330194,
+      "informal": 284650,
+      "translate": 724152
+    },
+    "qa_b": {
+      "complete": 1362984,
+      "balance": 300875,
+      "formal": 476797,
+      "informal": 411033,
+      "translate": 1045662
+    },
+    "title_b": {
+      "complete": 766279,
+      "balance": 0,
+      "formal": 0,
+      "informal": 148018,
+      "translate": 555638
+    }
+  },
+  "known_complete_instruction_conflicts": 1961,
+  "qa_total": 19458332,
+  "qa_cross": 5759806,
+  "complete_observed_cross_directions": 27,
+  "complete_consistent_cross_at_most": 4403826,
+  "underlying_base_records": 2025730
+}

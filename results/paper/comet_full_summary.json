@@ -1,0 +1,405 @@
+{
+  "model": "Unbabel/wmt22-comet-da",
+  "comet_version": "2.2.7",
+  "scope": "full",
+  "precision": "float32",
+  "batch_size": 32,
+  "models": {
+    "PCT-4B": {
+      "n": 36572,
+      "mean": 0.8986284997746924,
+      "encoder_max_positions": 512,
+      "truncated_text_counts": {
+        "src": 7757,
+        "mt": 7743,
+        "ref": 7789
+      },
+      "per_direction": {
+        "Hebrew-Spanish": {
+          "n": 1183,
+          "comet": 0.8954776286675783
+        },
+        "Arabic-English": {
+          "n": 1200,
+          "comet": 0.8958272933463256
+        },
+        "Spanish-English": {
+          "n": 1178,
+          "comet": 0.9024093826831096
+        },
+        "Hebrew-Persian": {
+          "n": 1198,
+          "comet": 0.9018019801487708
+        },
+        "English-Hebrew": {
+          "n": 1216,
+          "comet": 0.898468620254119
+        },
+        "Spanish-Chinese": {
+          "n": 1205,
+          "comet": 0.9013565286313845
+        },
+        "Persian-Spanish": {
+          "n": 1241,
+          "comet": 0.9027553177667567
+        },
+        "Persian-English": {
+          "n": 1234,
+          "comet": 0.9016365620943098
+        },
+        "Persian-Hebrew": {
+          "n": 1238,
+          "comet": 0.9094499851786118
+        },
+        "Arabic-Persian": {
+          "n": 1228,
+          "comet": 0.9046233663220165
+        },
+        "English-Arabic": {
+          "n": 1213,
+          "comet": 0.9006121444369237
+        },
+        "Chinese-English": {
+          "n": 1213,
+          "comet": 0.891576368506055
+        },
+        "Chinese-Spanish": {
+          "n": 1173,
+          "comet": 0.8903035290304251
+        },
+        "Chinese-Hebrew": {
+          "n": 1232,
+          "comet": 0.8674175162231187
+        },
+        "Arabic-Hebrew": {
+          "n": 1255,
+          "comet": 0.9102708226656059
+        },
+        "Spanish-Arabic": {
+          "n": 1220,
+          "comet": 0.8978086642310268
+        },
+        "Persian-Chinese": {
+          "n": 1251,
+          "comet": 0.9041055714150222
+        },
+        "English-Persian": {
+          "n": 1239,
+          "comet": 0.9013274720688805
+        },
+        "Hebrew-Chinese": {
+          "n": 1202,
+          "comet": 0.8974839358802842
+        },
+        "Chinese-Persian": {
+          "n": 1208,
+          "comet": 0.8904125354073892
+        },
+        "Chinese-Arabic": {
+          "n": 1229,
+          "comet": 0.8914592919963661
+        },
+        "Persian-Arabic": {
+          "n": 1228,
+          "comet": 0.9126780336352629
+        },
+        "English-Spanish": {
+          "n": 1188,
+          "comet": 0.8960666973582824
+        },
+        "Hebrew-Arabic": {
+          "n": 1230,
+          "comet": 0.9058618357268775
+        },
+        "Hebrew-English": {
+          "n": 1185,
+          "comet": 0.9002707319420601
+        },
+        "Spanish-Persian": {
+          "n": 1196,
+          "comet": 0.8971064131096455
+        },
+        "Arabic-Chinese": {
+          "n": 1201,
+          "comet": 0.8969395390954442
+        },
+        "English-Chinese": {
+          "n": 1276,
+          "comet": 0.9002018149790345
+        },
+        "Arabic-Spanish": {
+          "n": 1257,
+          "comet": 0.8936806098278686
+        },
+        "Spanish-Hebrew": {
+          "n": 1255,
+          "comet": 0.898490433792669
+        }
+      }
+    },
+    "Gemma 3 12B IT": {
+      "n": 36572,
+      "mean": 0.8819833493627116,
+      "encoder_max_positions": 512,
+      "truncated_text_counts": {
+        "src": 7757,
+        "mt": 8334,
+        "ref": 7789
+      },
+      "per_direction": {
+        "Hebrew-Spanish": {
+          "n": 1183,
+          "comet": 0.8833607980132808
+        },
+        "Arabic-English": {
+          "n": 1200,
+          "comet": 0.8873886314531167
+        },
+        "Spanish-English": {
+          "n": 1178,
+          "comet": 0.8930509265746245
+        },
+        "Hebrew-Persian": {
+          "n": 1198,
+          "comet": 0.8897570506210917
+        },
+        "English-Hebrew": {
+          "n": 1216,
+          "comet": 0.883111958269422
+        },
+        "Spanish-Chinese": {
+          "n": 1205,
+          "comet": 0.8673101250808763
+        },
+        "Persian-Spanish": {
+          "n": 1241,
+          "comet": 0.892165585115588
+        },
+        "Persian-English": {
+          "n": 1234,
+          "comet": 0.8928723545862751
+        },
+        "Persian-Hebrew": {
+          "n": 1238,
+          "comet": 0.8974052989683888
+        },
+        "Arabic-Persian": {
+          "n": 1228,
+          "comet": 0.8830260528882522
+        },
+        "English-Arabic": {
+          "n": 1213,
+          "comet": 0.8747136118926986
+        },
+        "Chinese-English": {
+          "n": 1213,
+          "comet": 0.8792675555440285
+        },
+        "Chinese-Spanish": {
+          "n": 1173,
+          "comet": 0.87271023960268
+        },
+        "Chinese-Hebrew": {
+          "n": 1232,
+          "comet": 0.8533736857897057
+        },
+        "Arabic-Hebrew": {
+          "n": 1255,
+          "comet": 0.8890721308995053
+        },
+        "Spanish-Arabic": {
+          "n": 1220,
+          "comet": 0.8814593668233176
+        },
+        "Persian-Chinese": {
+          "n": 1251,
+          "comet": 0.886658496374516
+        },
+        "English-Persian": {
+          "n": 1239,
+          "comet": 0.8824306116217658
+        },
+        "Hebrew-Chinese": {
+          "n": 1202,
+          "comet": 0.8766519267874431
+        },
+        "Chinese-Persian": {
+          "n": 1208,
+          "comet": 0.8784939662140134
+        },
+        "Chinese-Arabic": {
+          "n": 1229,
+          "comet": 0.8790914732402083
+        },
+        "Persian-Arabic": {
+          "n": 1228,
+          "comet": 0.8974630049390396
+        },
+        "English-Spanish": {
+          "n": 1188,
+          "comet": 0.8871681166417671
+        },
+        "Hebrew-Arabic": {
+          "n": 1230,
+          "comet": 0.893023655327355
+        },
+        "Hebrew-English": {
+          "n": 1185,
+          "comet": 0.8921980180569339
+        },
+        "Spanish-Persian": {
+          "n": 1196,
+          "comet": 0.88222779056998
+        },
+        "Arabic-Chinese": {
+          "n": 1201,
+          "comet": 0.8694311593543679
+        },
+        "English-Chinese": {
+          "n": 1276,
+          "comet": 0.850678546535184
+        },
+        "Arabic-Spanish": {
+          "n": 1257,
+          "comet": 0.8792623956239498
+        },
+        "Spanish-Hebrew": {
+          "n": 1255,
+          "comet": 0.8855264941297204
+        }
+      }
+    },
+    "Gemma 3 4B IT": {
+      "n": 36572,
+      "mean": 0.8587749717894823,
+      "encoder_max_positions": 512,
+      "truncated_text_counts": {
+        "src": 7757,
+        "mt": 8240,
+        "ref": 7789
+      },
+      "per_direction": {
+        "Hebrew-Spanish": {
+          "n": 1183,
+          "comet": 0.8556783020697906
+        },
+        "Arabic-English": {
+          "n": 1200,
+          "comet": 0.8698399190356334
+        },
+        "Spanish-English": {
+          "n": 1178,
+          "comet": 0.8770957765231108
+        },
+        "Hebrew-Persian": {
+          "n": 1198,
+          "comet": 0.8618780793575492
+        },
+        "English-Hebrew": {
+          "n": 1216,
+          "comet": 0.8716993958591238
+        },
+        "Spanish-Chinese": {
+          "n": 1205,
+          "comet": 0.8300671223040933
+        },
+        "Persian-Spanish": {
+          "n": 1241,
+          "comet": 0.8778423273472129
+        },
+        "Persian-English": {
+          "n": 1234,
+          "comet": 0.8846155494886241
+        },
+        "Persian-Hebrew": {
+          "n": 1238,
+          "comet": 0.8753427590645236
+        },
+        "Arabic-Persian": {
+          "n": 1228,
+          "comet": 0.8460190787165144
+        },
+        "English-Arabic": {
+          "n": 1213,
+          "comet": 0.8799033411528979
+        },
+        "Chinese-English": {
+          "n": 1213,
+          "comet": 0.862045453432932
+        },
+        "Chinese-Spanish": {
+          "n": 1173,
+          "comet": 0.8308169979217819
+        },
+        "Chinese-Hebrew": {
+          "n": 1232,
+          "comet": 0.8249569398217967
+        },
+        "Arabic-Hebrew": {
+          "n": 1255,
+          "comet": 0.8589626544262784
+        },
+        "Spanish-Arabic": {
+          "n": 1220,
+          "comet": 0.8721175366493522
+        },
+        "Persian-Chinese": {
+          "n": 1251,
+          "comet": 0.8619425952625123
+        },
+        "English-Persian": {
+          "n": 1239,
+          "comet": 0.8609908781194032
+        },
+        "Hebrew-Chinese": {
+          "n": 1202,
+          "comet": 0.8616764189647557
+        },
+        "Chinese-Persian": {
+          "n": 1208,
+          "comet": 0.8150899757119204
+        },
+        "Chinese-Arabic": {
+          "n": 1229,
+          "comet": 0.8407436403634589
+        },
+        "Persian-Arabic": {
+          "n": 1228,
+          "comet": 0.87509934434285
+        },
+        "English-Spanish": {
+          "n": 1188,
+          "comet": 0.8808493638781185
+        },
+        "Hebrew-Arabic": {
+          "n": 1230,
+          "comet": 0.8641775137888706
+        },
+        "Hebrew-English": {
+          "n": 1185,
+          "comet": 0.8763478266916195
+        },
+        "Spanish-Persian": {
+          "n": 1196,
+          "comet": 0.8566938130104024
+        },
+        "Arabic-Chinese": {
+          "n": 1201,
+          "comet": 0.8380738792818452
+        },
+        "English-Chinese": {
+          "n": 1276,
+          "comet": 0.8344153947310762
+        },
+        "Arabic-Spanish": {
+          "n": 1257,
+          "comet": 0.8560414060701333
+        },
+        "Spanish-Hebrew": {
+          "n": 1255,
+          "comet": 0.8625854170773609
+        }
+      }
+    }
+  }
+}

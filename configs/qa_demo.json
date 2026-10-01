@@ -1,0 +1,23 @@
+{
+  "seed": 42,
+  "rules": [
+    {
+      "source": "en",
+      "target": "fa",
+      "task": "complete",
+      "fraction": 1
+    },
+    {
+      "source": "fa",
+      "target": "en",
+      "task": "complete",
+      "fraction": 1
+    },
+    {
+      "source": "fa",
+      "target": "en",
+      "task": "translate",
+      "fraction": 1
+    }
+  ]
+}

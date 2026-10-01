@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "This repository accompanies the HexaBee-4B submission draft. Use the final author and publication metadata when it becomes available."
+title: "HexaBee-4B: Six-Language Translation with Multilingual Answering and Bidirectional Supervision"
+type: software
+url: "https://github.com/Iman998/HexaBee-4B"
+authors:
+  - name: "HexaBee-4B authors"
+version: 0.1.0
+date-released: 2026-10-02
+license: MIT
+abstract: "Reproducible multilingual data construction, translation evaluation, and paper artifacts for HexaBee-4B."

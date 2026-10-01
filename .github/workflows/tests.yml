@@ -1,0 +1,27 @@
+name: Offline checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -e '.[metrics,plots,hub,dev]'
+      - run: ruff check src scripts tests
+      - run: ruff format --check src scripts tests
+      - run: pytest -q
+      - run: python scripts/reproduce_paper.py --plots
+      - run: python scripts/build_paper_figures.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper-artifacts-${{ matrix.python-version }}
+          path: |
+            runs/paper/
+            figures/

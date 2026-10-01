@@ -1,0 +1,8 @@
+{
+  "full_bleu_chrf": true,
+  "full_chrfpp": true,
+  "full_ter": true,
+  "judge_ter": true,
+  "full_comet": true,
+  "judge_comet": true
+}

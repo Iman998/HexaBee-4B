@@ -1,0 +1,1547 @@
+{
+  "scope": "full",
+  "runtime": "3.11.7 | packaged by conda-forge | (main, Dec 23 2023, 14:43:09) [GCC 12.3.0]",
+  "kernel_sha256": "381263247983073abfb2ea595baf1599afad912572d6d89b48bc3f474f779dc1",
+  "complete": true,
+  "pairs_done": 90,
+  "pairs_total": 90,
+  "items_done": 109716,
+  "results": [
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Hebrew-Persian",
+      "n": 1198,
+      "metrics": {
+        "ter": 44.967556114679205
+      },
+      "statistics": {
+        "ter": [
+          135829,
+          302060.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Persian-Arabic",
+      "n": 1228,
+      "metrics": {
+        "ter": 38.52754693751924
+      },
+      "statistics": {
+        "ter": [
+          93882,
+          243675.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Spanish-Hebrew",
+      "n": 1255,
+      "metrics": {
+        "ter": 35.50895988691982
+      },
+      "statistics": {
+        "ter": [
+          107519,
+          302794.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Persian-Arabic",
+      "n": 1228,
+      "metrics": {
+        "ter": 24.42720837180671
+      },
+      "statistics": {
+        "ter": [
+          59523,
+          243675.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Persian-English",
+      "n": 1234,
+      "metrics": {
+        "ter": 14.408288152149128
+      },
+      "statistics": {
+        "ter": [
+          42334,
+          293817.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Persian-Chinese",
+      "n": 1251,
+      "metrics": {
+        "ter": 53.12188184827715
+      },
+      "statistics": {
+        "ter": [
+          227861,
+          428940.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Chinese-Spanish",
+      "n": 1173,
+      "metrics": {
+        "ter": 68.49430976858315
+      },
+      "statistics": {
+        "ter": [
+          291420,
+          425466.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Persian-Hebrew",
+      "n": 1238,
+      "metrics": {
+        "ter": 33.35568718000201
+      },
+      "statistics": {
+        "ter": [
+          83064,
+          249025.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Persian-Hebrew",
+      "n": 1238,
+      "metrics": {
+        "ter": 38.08774219455878
+      },
+      "statistics": {
+        "ter": [
+          94848,
+          249025.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Persian-Arabic",
+      "n": 1228,
+      "metrics": {
+        "ter": 56.62296091104955
+      },
+      "statistics": {
+        "ter": [
+          137976,
+          243675.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Chinese-Arabic",
+      "n": 1229,
+      "metrics": {
+        "ter": 61.19888379962037
+      },
+      "statistics": {
+        "ter": [
+          237295,
+          387744.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "English-Spanish",
+      "n": 1188,
+      "metrics": {
+        "ter": 23.336601003846493
+      },
+      "statistics": {
+        "ter": [
+          103078,
+          441701.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Chinese-Arabic",
+      "n": 1229,
+      "metrics": {
+        "ter": 80.62922959478419
+      },
+      "statistics": {
+        "ter": [
+          312635,
+          387744.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Persian-Spanish",
+      "n": 1241,
+      "metrics": {
+        "ter": 15.382890598237363
+      },
+      "statistics": {
+        "ter": [
+          49396,
+          321110.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Persian-English",
+      "n": 1234,
+      "metrics": {
+        "ter": 20.088013967877966
+      },
+      "statistics": {
+        "ter": [
+          59022,
+          293817.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Chinese-English",
+      "n": 1213,
+      "metrics": {
+        "ter": 59.52769640750234
+      },
+      "statistics": {
+        "ter": [
+          234101,
+          393264.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Spanish-English",
+      "n": 1178,
+      "metrics": {
+        "ter": 14.434340976826228
+      },
+      "statistics": {
+        "ter": [
+          47463,
+          328820.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Hebrew-English",
+      "n": 1185,
+      "metrics": {
+        "ter": 12.540216486261448
+      },
+      "statistics": {
+        "ter": [
+          37652,
+          300250.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Hebrew-Spanish",
+      "n": 1183,
+      "metrics": {
+        "ter": 30.87583387131483
+      },
+      "statistics": {
+        "ter": [
+          100436,
+          325290.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Chinese-Persian",
+      "n": 1208,
+      "metrics": {
+        "ter": 90.08573587957503
+      },
+      "statistics": {
+        "ter": [
+          374272,
+          415462.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Chinese-Hebrew",
+      "n": 1232,
+      "metrics": {
+        "ter": 88.3988237083608
+      },
+      "statistics": {
+        "ter": [
+          523047,
+          591690.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Spanish-Arabic",
+      "n": 1220,
+      "metrics": {
+        "ter": 27.404227301433735
+      },
+      "statistics": {
+        "ter": [
+          81578,
+          297684.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Hebrew-Arabic",
+      "n": 1230,
+      "metrics": {
+        "ter": 23.2562773234985
+      },
+      "statistics": {
+        "ter": [
+          59527,
+          255961.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Hebrew-Arabic",
+      "n": 1230,
+      "metrics": {
+        "ter": 32.18966951996593
+      },
+      "statistics": {
+        "ter": [
+          82393,
+          255961.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Persian-English",
+      "n": 1234,
+      "metrics": {
+        "ter": 29.13480159418958
+      },
+      "statistics": {
+        "ter": [
+          85603,
+          293817.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Spanish-Hebrew",
+      "n": 1255,
+      "metrics": {
+        "ter": 50.63013137644735
+      },
+      "statistics": {
+        "ter": [
+          153305,
+          302794.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "English-Persian",
+      "n": 1239,
+      "metrics": {
+        "ter": 29.146009544383826
+      },
+      "statistics": {
+        "ter": [
+          119401,
+          409665.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Arabic-English",
+      "n": 1200,
+      "metrics": {
+        "ter": 21.034908783262047
+      },
+      "statistics": {
+        "ter": [
+          62655,
+          297862.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Arabic-Spanish",
+      "n": 1257,
+      "metrics": {
+        "ter": 14.40516057346564
+      },
+      "statistics": {
+        "ter": [
+          46672,
+          323995.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Arabic-Persian",
+      "n": 1228,
+      "metrics": {
+        "ter": 56.93487230026559
+      },
+      "statistics": {
+        "ter": [
+          170426,
+          299335.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Chinese-Spanish",
+      "n": 1173,
+      "metrics": {
+        "ter": 31.492293156209897
+      },
+      "statistics": {
+        "ter": [
+          133989,
+          425466.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Arabic-Hebrew",
+      "n": 1255,
+      "metrics": {
+        "ter": 28.873051713864584
+      },
+      "statistics": {
+        "ter": [
+          73654,
+          255096.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Arabic-Spanish",
+      "n": 1257,
+      "metrics": {
+        "ter": 30.236886371703267
+      },
+      "statistics": {
+        "ter": [
+          97966,
+          323995.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Hebrew-English",
+      "n": 1185,
+      "metrics": {
+        "ter": 16.71940049958368
+      },
+      "statistics": {
+        "ter": [
+          50200,
+          300250.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "English-Hebrew",
+      "n": 1216,
+      "metrics": {
+        "ter": 49.76811199054806
+      },
+      "statistics": {
+        "ter": [
+          186184,
+          374103.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Hebrew-Spanish",
+      "n": 1183,
+      "metrics": {
+        "ter": 11.910910264686894
+      },
+      "statistics": {
+        "ter": [
+          38745,
+          325290.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Arabic-Hebrew",
+      "n": 1255,
+      "metrics": {
+        "ter": 55.19961112679148
+      },
+      "statistics": {
+        "ter": [
+          140812,
+          255096.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Arabic-Chinese",
+      "n": 1201,
+      "metrics": {
+        "ter": 58.03760290334219
+      },
+      "statistics": {
+        "ter": [
+          246116,
+          424063.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Persian-Spanish",
+      "n": 1241,
+      "metrics": {
+        "ter": 29.25103547071097
+      },
+      "statistics": {
+        "ter": [
+          93928,
+          321110.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Spanish-English",
+      "n": 1178,
+      "metrics": {
+        "ter": 9.367435070859436
+      },
+      "statistics": {
+        "ter": [
+          30802,
+          328820.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Chinese-English",
+      "n": 1213,
+      "metrics": {
+        "ter": 40.65462386590178
+      },
+      "statistics": {
+        "ter": [
+          159880,
+          393264.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Persian-Chinese",
+      "n": 1251,
+      "metrics": {
+        "ter": 34.9128083181797
+      },
+      "statistics": {
+        "ter": [
+          149755,
+          428940.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Arabic-Persian",
+      "n": 1228,
+      "metrics": {
+        "ter": 23.94841899543989
+      },
+      "statistics": {
+        "ter": [
+          71686,
+          299335.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "English-Persian",
+      "n": 1239,
+      "metrics": {
+        "ter": 52.63446962762257
+      },
+      "statistics": {
+        "ter": [
+          215625,
+          409665.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Arabic-English",
+      "n": 1200,
+      "metrics": {
+        "ter": 29.382398560407168
+      },
+      "statistics": {
+        "ter": [
+          87519,
+          297862.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Spanish-Hebrew",
+      "n": 1255,
+      "metrics": {
+        "ter": 26.39880578875407
+      },
+      "statistics": {
+        "ter": [
+          79934,
+          302794.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Arabic-Persian",
+      "n": 1228,
+      "metrics": {
+        "ter": 40.83551873319191
+      },
+      "statistics": {
+        "ter": [
+          122235,
+          299335.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "English-Hebrew",
+      "n": 1216,
+      "metrics": {
+        "ter": 32.126981072057696
+      },
+      "statistics": {
+        "ter": [
+          120188,
+          374103.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Hebrew-Spanish",
+      "n": 1183,
+      "metrics": {
+        "ter": 17.17605828645209
+      },
+      "statistics": {
+        "ter": [
+          55872,
+          325290.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Chinese-Persian",
+      "n": 1208,
+      "metrics": {
+        "ter": 55.17375837019992
+      },
+      "statistics": {
+        "ter": [
+          229226,
+          415462.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Chinese-Spanish",
+      "n": 1173,
+      "metrics": {
+        "ter": 44.49850281808652
+      },
+      "statistics": {
+        "ter": [
+          189326,
+          425466.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "English-Arabic",
+      "n": 1213,
+      "metrics": {
+        "ter": 51.69929605525302
+      },
+      "statistics": {
+        "ter": [
+          194622,
+          376450.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Persian-Chinese",
+      "n": 1251,
+      "metrics": {
+        "ter": 44.41530283955798
+      },
+      "statistics": {
+        "ter": [
+          190515,
+          428940.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Arabic-English",
+      "n": 1200,
+      "metrics": {
+        "ter": 16.020506140427447
+      },
+      "statistics": {
+        "ter": [
+          47719,
+          297862.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Chinese-Hebrew",
+      "n": 1232,
+      "metrics": {
+        "ter": 90.08551775422941
+      },
+      "statistics": {
+        "ter": [
+          533027,
+          591690.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "English-Spanish",
+      "n": 1188,
+      "metrics": {
+        "ter": 12.447334282693497
+      },
+      "statistics": {
+        "ter": [
+          54980,
+          441701.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Hebrew-Persian",
+      "n": 1198,
+      "metrics": {
+        "ter": 33.54598424154142
+      },
+      "statistics": {
+        "ter": [
+          101329,
+          302060.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Arabic-Chinese",
+      "n": 1201,
+      "metrics": {
+        "ter": 50.061901179777536
+      },
+      "statistics": {
+        "ter": [
+          212294,
+          424063.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "English-Chinese",
+      "n": 1276,
+      "metrics": {
+        "ter": 45.390296249978874
+      },
+      "statistics": {
+        "ter": [
+          268588,
+          591730.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Chinese-Persian",
+      "n": 1208,
+      "metrics": {
+        "ter": 55.33165488059076
+      },
+      "statistics": {
+        "ter": [
+          229882,
+          415462.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "English-Persian",
+      "n": 1239,
+      "metrics": {
+        "ter": 41.51831374415681
+      },
+      "statistics": {
+        "ter": [
+          170086,
+          409665.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Spanish-Chinese",
+      "n": 1205,
+      "metrics": {
+        "ter": 63.074487578478504
+      },
+      "statistics": {
+        "ter": [
+          303604,
+          481342.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Chinese-Arabic",
+      "n": 1229,
+      "metrics": {
+        "ter": 57.30249855574812
+      },
+      "statistics": {
+        "ter": [
+          222187,
+          387744.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Persian-Spanish",
+      "n": 1241,
+      "metrics": {
+        "ter": 20.90280589206191
+      },
+      "statistics": {
+        "ter": [
+          67121,
+          321110.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Hebrew-Persian",
+      "n": 1198,
+      "metrics": {
+        "ter": 23.033834337548832
+      },
+      "statistics": {
+        "ter": [
+          69576,
+          302060.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "English-Arabic",
+      "n": 1213,
+      "metrics": {
+        "ter": 47.70274936910612
+      },
+      "statistics": {
+        "ter": [
+          179577,
+          376450.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "English-Hebrew",
+      "n": 1216,
+      "metrics": {
+        "ter": 41.61821744278982
+      },
+      "statistics": {
+        "ter": [
+          155695,
+          374103.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Spanish-Arabic",
+      "n": 1220,
+      "metrics": {
+        "ter": 47.96025315435159
+      },
+      "statistics": {
+        "ter": [
+          142770,
+          297684.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "English-Spanish",
+      "n": 1188,
+      "metrics": {
+        "ter": 17.23745248482571
+      },
+      "statistics": {
+        "ter": [
+          76138,
+          441701.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Hebrew-Chinese",
+      "n": 1202,
+      "metrics": {
+        "ter": 33.49468686411937
+      },
+      "statistics": {
+        "ter": [
+          148147,
+          442300.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Hebrew-Chinese",
+      "n": 1202,
+      "metrics": {
+        "ter": 45.95455573140402
+      },
+      "statistics": {
+        "ter": [
+          203257,
+          442300.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Hebrew-Chinese",
+      "n": 1202,
+      "metrics": {
+        "ter": 51.03843545105132
+      },
+      "statistics": {
+        "ter": [
+          225743,
+          442300.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Spanish-Persian",
+      "n": 1196,
+      "metrics": {
+        "ter": 51.17025037765564
+      },
+      "statistics": {
+        "ter": [
+          159206,
+          311130.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Spanish-English",
+      "n": 1178,
+      "metrics": {
+        "ter": 34.72507755002737
+      },
+      "statistics": {
+        "ter": [
+          114183,
+          328820.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Spanish-Persian",
+      "n": 1196,
+      "metrics": {
+        "ter": 36.7126281618616
+      },
+      "statistics": {
+        "ter": [
+          114224,
+          311130.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "English-Chinese",
+      "n": 1276,
+      "metrics": {
+        "ter": 69.4173018099471
+      },
+      "statistics": {
+        "ter": [
+          410763,
+          591730.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Chinese-English",
+      "n": 1213,
+      "metrics": {
+        "ter": 32.67397982017169
+      },
+      "statistics": {
+        "ter": [
+          128495,
+          393264.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "English-Chinese",
+      "n": 1276,
+      "metrics": {
+        "ter": 67.90664661247528
+      },
+      "statistics": {
+        "ter": [
+          401824,
+          591730.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Hebrew-English",
+      "n": 1185,
+      "metrics": {
+        "ter": 28.987510407993337
+      },
+      "statistics": {
+        "ter": [
+          87035,
+          300250.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Spanish-Arabic",
+      "n": 1220,
+      "metrics": {
+        "ter": 43.374517945203635
+      },
+      "statistics": {
+        "ter": [
+          129119,
+          297684.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Spanish-Chinese",
+      "n": 1205,
+      "metrics": {
+        "ter": 69.3270065774439
+      },
+      "statistics": {
+        "ter": [
+          333700,
+          481342.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Chinese-Hebrew",
+      "n": 1232,
+      "metrics": {
+        "ter": 78.12824282986023
+      },
+      "statistics": {
+        "ter": [
+          462277,
+          591690.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Arabic-Spanish",
+      "n": 1257,
+      "metrics": {
+        "ter": 20.85279093813176
+      },
+      "statistics": {
+        "ter": [
+          67562,
+          323995.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 12B IT",
+      "pair": "Arabic-Hebrew",
+      "n": 1255,
+      "metrics": {
+        "ter": 37.34319628688807
+      },
+      "statistics": {
+        "ter": [
+          95261,
+          255096.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "English-Arabic",
+      "n": 1213,
+      "metrics": {
+        "ter": 35.72240669411608
+      },
+      "statistics": {
+        "ter": [
+          134477,
+          376450.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Persian-Hebrew",
+      "n": 1238,
+      "metrics": {
+        "ter": 52.35137034434294
+      },
+      "statistics": {
+        "ter": [
+          130368,
+          249025.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Arabic-Chinese",
+      "n": 1201,
+      "metrics": {
+        "ter": 35.010835654136294
+      },
+      "statistics": {
+        "ter": [
+          148468,
+          424063.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Spanish-Persian",
+      "n": 1196,
+      "metrics": {
+        "ter": 27.11149680197988
+      },
+      "statistics": {
+        "ter": [
+          84352,
+          311130.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "Gemma 3 4B IT",
+      "pair": "Hebrew-Arabic",
+      "n": 1230,
+      "metrics": {
+        "ter": 48.019815518770436
+      },
+      "statistics": {
+        "ter": [
+          122912,
+          255961.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    },
+    {
+      "model": "PCT-4B",
+      "pair": "Spanish-Chinese",
+      "n": 1205,
+      "metrics": {
+        "ter": 44.61110811024178
+      },
+      "statistics": {
+        "ter": [
+          214732,
+          481342.0
+        ]
+      },
+      "signature": {
+        "ter": "nrefs:1|case:lc|tok:tercom|norm:yes|punct:yes|asian:yes|version:2.5.1"
+      }
+    }
+  ],
+  "compiled_search_sha256": "b3c4d5072e00ab127e91839e2603eed9f4f451b5241b8ac9c0c2b991dd90c85b",
+  "validation_reports": [
+    "ter_acceleration_validation.json",
+    "ter_full_kernel_validation.json"
+  ],
+  "reference_implementation": "sacrebleu 2.5.1"
+}

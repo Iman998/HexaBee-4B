@@ -1,0 +1,11 @@
+{
+  "model": "gemma-3-27b-it",
+  "revision": null,
+  "base_url_env": "PCT_API_BASE",
+  "api_key_env": "PCT_API_KEY",
+  "temperature": 0,
+  "top_p": 1,
+  "max_tokens": 5000,
+  "timeout": 120,
+  "attempts": 3
+}

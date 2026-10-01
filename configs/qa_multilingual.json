@@ -1,0 +1,1224 @@
+{
+  "seed": 42,
+  "sampling": "stable Bernoulli, not historical exact row selection",
+  "rules": [
+    {
+      "id": "complete_fa_fa",
+      "source": "fa",
+      "target": "fa",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_fa_fa",
+      "source": "fa",
+      "target": "fa",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_fa_fa",
+      "source": "fa",
+      "target": "fa",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_fa_fa",
+      "source": "fa",
+      "target": "fa",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "complete_fa_en",
+      "source": "fa",
+      "target": "en",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_fa_en",
+      "source": "fa",
+      "target": "en",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_fa_en",
+      "source": "fa",
+      "target": "en",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_fa_en",
+      "source": "fa",
+      "target": "en",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_fa_en",
+      "source": "fa",
+      "target": "en",
+      "task": "translate",
+      "fraction": 0.7
+    },
+    {
+      "id": "complete_fa_ar",
+      "source": "fa",
+      "target": "ar",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_fa_ar",
+      "source": "fa",
+      "target": "ar",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_fa_ar",
+      "source": "fa",
+      "target": "ar",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_fa_ar",
+      "source": "fa",
+      "target": "ar",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_fa_ar",
+      "source": "fa",
+      "target": "ar",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_fa_zh",
+      "source": "fa",
+      "target": "zh",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_fa_zh",
+      "source": "fa",
+      "target": "zh",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_fa_zh",
+      "source": "fa",
+      "target": "zh",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_fa_zh",
+      "source": "fa",
+      "target": "zh",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_fa_zh",
+      "source": "fa",
+      "target": "zh",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_fa_he",
+      "source": "fa",
+      "target": "he",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_fa_he",
+      "source": "fa",
+      "target": "he",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_fa_he",
+      "source": "fa",
+      "target": "he",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_fa_he",
+      "source": "fa",
+      "target": "he",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_fa_he",
+      "source": "fa",
+      "target": "he",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_fa_es",
+      "source": "fa",
+      "target": "es",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_fa_es",
+      "source": "fa",
+      "target": "es",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_fa_es",
+      "source": "fa",
+      "target": "es",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_fa_es",
+      "source": "fa",
+      "target": "es",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_fa_es",
+      "source": "fa",
+      "target": "es",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_en_fa",
+      "source": "en",
+      "target": "fa",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_en_fa",
+      "source": "en",
+      "target": "fa",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_en_fa",
+      "source": "en",
+      "target": "fa",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_en_fa",
+      "source": "en",
+      "target": "fa",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_en_fa",
+      "source": "en",
+      "target": "fa",
+      "task": "translate",
+      "fraction": 0.7
+    },
+    {
+      "id": "complete_en_en",
+      "source": "en",
+      "target": "en",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_en_en",
+      "source": "en",
+      "target": "en",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_en_en",
+      "source": "en",
+      "target": "en",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_en_en",
+      "source": "en",
+      "target": "en",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "complete_en_ar",
+      "source": "en",
+      "target": "ar",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_en_ar",
+      "source": "en",
+      "target": "ar",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_en_ar",
+      "source": "en",
+      "target": "ar",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_en_ar",
+      "source": "en",
+      "target": "ar",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_en_ar",
+      "source": "en",
+      "target": "ar",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_en_zh",
+      "source": "en",
+      "target": "zh",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_en_zh",
+      "source": "en",
+      "target": "zh",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_en_zh",
+      "source": "en",
+      "target": "zh",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_en_zh",
+      "source": "en",
+      "target": "zh",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_en_zh",
+      "source": "en",
+      "target": "zh",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_en_he",
+      "source": "en",
+      "target": "he",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_en_he",
+      "source": "en",
+      "target": "he",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_en_he",
+      "source": "en",
+      "target": "he",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_en_he",
+      "source": "en",
+      "target": "he",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_en_he",
+      "source": "en",
+      "target": "he",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_en_es",
+      "source": "en",
+      "target": "es",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_en_es",
+      "source": "en",
+      "target": "es",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_en_es",
+      "source": "en",
+      "target": "es",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_en_es",
+      "source": "en",
+      "target": "es",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_en_es",
+      "source": "en",
+      "target": "es",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_ar_fa",
+      "source": "ar",
+      "target": "fa",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_ar_fa",
+      "source": "ar",
+      "target": "fa",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_ar_fa",
+      "source": "ar",
+      "target": "fa",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_ar_fa",
+      "source": "ar",
+      "target": "fa",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_ar_fa",
+      "source": "ar",
+      "target": "fa",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_ar_en",
+      "source": "ar",
+      "target": "en",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_ar_en",
+      "source": "ar",
+      "target": "en",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_ar_en",
+      "source": "ar",
+      "target": "en",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_ar_en",
+      "source": "ar",
+      "target": "en",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_ar_en",
+      "source": "ar",
+      "target": "en",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_ar_ar",
+      "source": "ar",
+      "target": "ar",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_ar_ar",
+      "source": "ar",
+      "target": "ar",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_ar_ar",
+      "source": "ar",
+      "target": "ar",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_ar_ar",
+      "source": "ar",
+      "target": "ar",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "complete_ar_zh",
+      "source": "ar",
+      "target": "zh",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_ar_zh",
+      "source": "ar",
+      "target": "zh",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_ar_zh",
+      "source": "ar",
+      "target": "zh",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_ar_zh",
+      "source": "ar",
+      "target": "zh",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_ar_zh",
+      "source": "ar",
+      "target": "zh",
+      "task": "translate",
+      "fraction": 0.08
+    },
+    {
+      "id": "complete_ar_he",
+      "source": "ar",
+      "target": "he",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_ar_he",
+      "source": "ar",
+      "target": "he",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_ar_he",
+      "source": "ar",
+      "target": "he",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_ar_he",
+      "source": "ar",
+      "target": "he",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_ar_he",
+      "source": "ar",
+      "target": "he",
+      "task": "translate",
+      "fraction": 0.08
+    },
+    {
+      "id": "complete_ar_es",
+      "source": "ar",
+      "target": "es",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_ar_es",
+      "source": "ar",
+      "target": "es",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_ar_es",
+      "source": "ar",
+      "target": "es",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_ar_es",
+      "source": "ar",
+      "target": "es",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_ar_es",
+      "source": "ar",
+      "target": "es",
+      "task": "translate",
+      "fraction": 0.08
+    },
+    {
+      "id": "complete_zh_fa",
+      "source": "zh",
+      "target": "fa",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_zh_fa",
+      "source": "zh",
+      "target": "fa",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_zh_fa",
+      "source": "zh",
+      "target": "fa",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_zh_fa",
+      "source": "zh",
+      "target": "fa",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_zh_fa",
+      "source": "zh",
+      "target": "fa",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_zh_en",
+      "source": "zh",
+      "target": "en",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_zh_en",
+      "source": "zh",
+      "target": "en",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_zh_en",
+      "source": "zh",
+      "target": "en",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_zh_en",
+      "source": "zh",
+      "target": "en",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_zh_en",
+      "source": "zh",
+      "target": "en",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_zh_ar",
+      "source": "zh",
+      "target": "ar",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_zh_ar",
+      "source": "zh",
+      "target": "ar",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_zh_ar",
+      "source": "zh",
+      "target": "ar",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_zh_ar",
+      "source": "zh",
+      "target": "ar",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_zh_ar",
+      "source": "zh",
+      "target": "ar",
+      "task": "translate",
+      "fraction": 0.08
+    },
+    {
+      "id": "complete_zh_zh",
+      "source": "zh",
+      "target": "zh",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_zh_zh",
+      "source": "zh",
+      "target": "zh",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_zh_zh",
+      "source": "zh",
+      "target": "zh",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_zh_zh",
+      "source": "zh",
+      "target": "zh",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "complete_zh_he",
+      "source": "zh",
+      "target": "he",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_zh_he",
+      "source": "zh",
+      "target": "he",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_zh_he",
+      "source": "zh",
+      "target": "he",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_zh_he",
+      "source": "zh",
+      "target": "he",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_zh_he",
+      "source": "zh",
+      "target": "he",
+      "task": "translate",
+      "fraction": 0.08
+    },
+    {
+      "id": "complete_zh_es",
+      "source": "zh",
+      "target": "es",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_zh_es",
+      "source": "zh",
+      "target": "es",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_zh_es",
+      "source": "zh",
+      "target": "es",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_zh_es",
+      "source": "zh",
+      "target": "es",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_zh_es",
+      "source": "zh",
+      "target": "es",
+      "task": "translate",
+      "fraction": 0.08
+    },
+    {
+      "id": "complete_he_fa",
+      "source": "he",
+      "target": "fa",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_he_fa",
+      "source": "he",
+      "target": "fa",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_he_fa",
+      "source": "he",
+      "target": "fa",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_he_fa",
+      "source": "he",
+      "target": "fa",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_he_fa",
+      "source": "he",
+      "target": "fa",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_he_en",
+      "source": "he",
+      "target": "en",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_he_en",
+      "source": "he",
+      "target": "en",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_he_en",
+      "source": "he",
+      "target": "en",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_he_en",
+      "source": "he",
+      "target": "en",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_he_en",
+      "source": "he",
+      "target": "en",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_he_ar",
+      "source": "he",
+      "target": "ar",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_he_ar",
+      "source": "he",
+      "target": "ar",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_he_ar",
+      "source": "he",
+      "target": "ar",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_he_ar",
+      "source": "he",
+      "target": "ar",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_he_ar",
+      "source": "he",
+      "target": "ar",
+      "task": "translate",
+      "fraction": 0.08
+    },
+    {
+      "id": "complete_he_zh",
+      "source": "he",
+      "target": "zh",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_he_zh",
+      "source": "he",
+      "target": "zh",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_he_zh",
+      "source": "he",
+      "target": "zh",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_he_zh",
+      "source": "he",
+      "target": "zh",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_he_zh",
+      "source": "he",
+      "target": "zh",
+      "task": "translate",
+      "fraction": 0.08
+    },
+    {
+      "id": "complete_he_he",
+      "source": "he",
+      "target": "he",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_he_he",
+      "source": "he",
+      "target": "he",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_he_he",
+      "source": "he",
+      "target": "he",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_he_he",
+      "source": "he",
+      "target": "he",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "complete_he_es",
+      "source": "he",
+      "target": "es",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_he_es",
+      "source": "he",
+      "target": "es",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_he_es",
+      "source": "he",
+      "target": "es",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_he_es",
+      "source": "he",
+      "target": "es",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_he_es",
+      "source": "he",
+      "target": "es",
+      "task": "translate",
+      "fraction": 0.08
+    },
+    {
+      "id": "complete_es_fa",
+      "source": "es",
+      "target": "fa",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_es_fa",
+      "source": "es",
+      "target": "fa",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_es_fa",
+      "source": "es",
+      "target": "fa",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_es_fa",
+      "source": "es",
+      "target": "fa",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_es_fa",
+      "source": "es",
+      "target": "fa",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_es_en",
+      "source": "es",
+      "target": "en",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_es_en",
+      "source": "es",
+      "target": "en",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_es_en",
+      "source": "es",
+      "target": "en",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_es_en",
+      "source": "es",
+      "target": "en",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_es_en",
+      "source": "es",
+      "target": "en",
+      "task": "translate",
+      "fraction": 0.25
+    },
+    {
+      "id": "complete_es_ar",
+      "source": "es",
+      "target": "ar",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_es_ar",
+      "source": "es",
+      "target": "ar",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_es_ar",
+      "source": "es",
+      "target": "ar",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_es_ar",
+      "source": "es",
+      "target": "ar",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_es_ar",
+      "source": "es",
+      "target": "ar",
+      "task": "translate",
+      "fraction": 0.08
+    },
+    {
+      "id": "complete_es_zh",
+      "source": "es",
+      "target": "zh",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_es_zh",
+      "source": "es",
+      "target": "zh",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_es_zh",
+      "source": "es",
+      "target": "zh",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_es_zh",
+      "source": "es",
+      "target": "zh",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_es_zh",
+      "source": "es",
+      "target": "zh",
+      "task": "translate",
+      "fraction": 0.08
+    },
+    {
+      "id": "complete_es_he",
+      "source": "es",
+      "target": "he",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_es_he",
+      "source": "es",
+      "target": "he",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_es_he",
+      "source": "es",
+      "target": "he",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_es_he",
+      "source": "es",
+      "target": "he",
+      "task": "moderate",
+      "fraction": 1.0
+    },
+    {
+      "id": "translate_es_he",
+      "source": "es",
+      "target": "he",
+      "task": "translate",
+      "fraction": 0.08
+    },
+    {
+      "id": "complete_es_es",
+      "source": "es",
+      "target": "es",
+      "task": "complete",
+      "fraction": 1.0
+    },
+    {
+      "id": "formal_es_es",
+      "source": "es",
+      "target": "es",
+      "task": "formal",
+      "fraction": 1.0
+    },
+    {
+      "id": "informal_es_es",
+      "source": "es",
+      "target": "es",
+      "task": "informal",
+      "fraction": 1.0
+    },
+    {
+      "id": "moderate_es_es",
+      "source": "es",
+      "target": "es",
+      "task": "moderate",
+      "fraction": 1.0
+    }
+  ]
+}

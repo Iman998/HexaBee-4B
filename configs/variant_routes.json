@@ -1,0 +1,33 @@
+{
+  "routes": [
+    [
+      "fa",
+      "en"
+    ],
+    [
+      "fa",
+      "ar"
+    ],
+    [
+      "en",
+      "zh"
+    ],
+    [
+      "en",
+      "he"
+    ],
+    [
+      "en",
+      "es"
+    ]
+  ],
+  "fields": [
+    "question",
+    "answer",
+    "formal_question",
+    "formal_answer",
+    "informal_question",
+    "informal_answer",
+    "moderate_answer"
+  ]
+}

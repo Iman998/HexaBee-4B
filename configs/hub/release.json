@@ -1,0 +1,545 @@
+{
+  "owner": "Iman998",
+  "public": true,
+  "staging_root": "runs/hub/repositories",
+  "scratch_root": "runs/hub/work",
+  "brand_assets": "assets/brand",
+  "repositories": [
+    {
+      "key": "model",
+      "repo_id": "Iman998/HexaBee-4B",
+      "repo_type": "model",
+      "kind": "model",
+      "title": "HexaBee-4B",
+      "subtitle": "Six languages. One translator.",
+      "banner": "01-hero-banner.png",
+      "description": "The final merged **HexaBee-4B** translator based on Gemma 3 4B IT. Adaptation combines Wikipedia continued pretraining, multilingual answering with answer-text translation, and a final fresh LoRA trained on bidirectional synthetic translations. The six evaluation languages are Persian, English, Arabic, Chinese, Hebrew and Spanish.",
+      "scope": "Final merged translator",
+      "contents": "Full two-shard Safetensors weights, Gemma 3 processor/tokenizer and chat template. No adapter merge is required for this repository.",
+      "provenance": "The final model was trained with a fresh rank-256 LoRA (alpha 512, dropout 0.005) on the already-merged multilingual checkpoint. The final stage retained 658,274 SFT records: 329,137 aligned pairs in both orientations. It ran one epoch with learning rate 1e-4 and cutoff 4,096. All weights are preserved; only local path metadata is normalized for publication.",
+      "limitations": "The released checkpoint has not been evaluated for image tasks, despite retaining the Gemma 3 multimodal architecture. Intermediate checkpoints have no independent matched translation evaluation. Quality can vary by language, domain, and input length.",
+      "base_model": "Iman998/HexaBee-4B-Multilingual-Base",
+      "source": "data/release-inputs/model"
+    },
+    {
+      "key": "multilingual-base",
+      "repo_id": "Iman998/HexaBee-4B-Multilingual-Base",
+      "repo_type": "model",
+      "kind": "model",
+      "title": "HexaBee · Multilingual Base",
+      "subtitle": "The multilingual foundation behind the final translator.",
+      "banner": "05-phase2-multilingual-qa.png",
+      "description": "Merged checkpoint after the multilingual answering and answer-text translation stage. This is the **required base of the final translation adapter**; it is an intermediate checkpoint, not the evaluated final HexaBee-4B translator.",
+      "scope": "Phase 2 merged base",
+      "contents": "Full two-shard Safetensors weights, Gemma 3 configuration, processor/tokenizer, and chat template. This merged checkpoint is the exact base for the final translation LoRA.",
+      "provenance": "Wikipedia adapter → continued multilingual SFT adapter → merge with Gemma 3 4B IT. Phase 2 used all 22 retained SFT datasets, totalling 30,153,404 records. No independent translation evaluation of this intermediate checkpoint is available.",
+      "limitations": "The released checkpoint has not been evaluated for image tasks, despite retaining the Gemma 3 multimodal architecture. Intermediate checkpoints have no independent matched translation evaluation. Quality can vary by language, domain, and input length.",
+      "base_model": "google/gemma-3-4b-it",
+      "source": "data/release-inputs/multilingual-base"
+    },
+    {
+      "key": "lora-pt",
+      "repo_id": "Iman998/HexaBee-4B-PT-LoRA",
+      "repo_type": "model",
+      "kind": "adapter",
+      "title": "HexaBee · Wikipedia PT LoRA",
+      "subtitle": "Wikipedia foundations · the first adaptation checkpoint.",
+      "banner": "04-phase1-knowledge.png",
+      "description": "The saved LoRA adapter from phase 1 of the final HexaBee training lineage. The PT adapter is continued during multilingual SFT; the translation adapter is initialized afresh after the intermediate merge.",
+      "scope": "Phase 1 adapter",
+      "contents": "Adapter Safetensors, normalized adapter configuration, tokenizer/processor, and recorded training/evaluation statistics. Optimizer state, serialized Python training arguments, and unrelated checkpoints are excluded.",
+      "provenance": "This is the actual saved adapter from the final translator lineage. Its exact rank, alpha, dropout and target module inventory are recorded in `release_stats.json`; those values take precedence over a nearby YAML file that may have changed. Load on `google/gemma-3-4b-it`. Public repository names identify the role instead of historical local version suffixes.",
+      "limitations": "The released checkpoint has not been evaluated for image tasks, despite retaining the Gemma 3 multimodal architecture. Intermediate checkpoints have no independent matched translation evaluation. Quality can vary by language, domain, and input length.",
+      "base_model": "google/gemma-3-4b-it",
+      "source": "data/release-inputs/lora-pt"
+    },
+    {
+      "key": "lora-sft",
+      "repo_id": "Iman998/HexaBee-4B-Multilingual-SFT-LoRA",
+      "repo_type": "model",
+      "kind": "adapter",
+      "title": "HexaBee · Multilingual SFT LoRA",
+      "subtitle": "Cross-language answering · a continued adapter.",
+      "banner": "05-phase2-multilingual-qa.png",
+      "description": "The saved LoRA adapter from phase 2 of the final HexaBee training lineage. The PT adapter is continued during multilingual SFT; the translation adapter is initialized afresh after the intermediate merge.",
+      "scope": "Phase 2 adapter",
+      "contents": "Adapter Safetensors, normalized adapter configuration, tokenizer/processor, and recorded training/evaluation statistics. Optimizer state, serialized Python training arguments, and unrelated checkpoints are excluded.",
+      "provenance": "This is the actual saved adapter from the final translator lineage. Its exact rank, alpha, dropout and target module inventory are recorded in `release_stats.json`; those values take precedence over a nearby YAML file that may have changed. Load on `google/gemma-3-4b-it`. Public repository names identify the role instead of historical local version suffixes.",
+      "limitations": "The released checkpoint has not been evaluated for image tasks, despite retaining the Gemma 3 multimodal architecture. Intermediate checkpoints have no independent matched translation evaluation. Quality can vary by language, domain, and input length.",
+      "base_model": "google/gemma-3-4b-it",
+      "source": "data/release-inputs/lora-sft"
+    },
+    {
+      "key": "lora-translation",
+      "repo_id": "Iman998/HexaBee-4B-Translation-LoRA",
+      "repo_type": "model",
+      "kind": "adapter",
+      "title": "HexaBee · Translation LoRA",
+      "subtitle": "Bidirectional translation · the final adaptation.",
+      "banner": "06-phase3-translation.png",
+      "description": "The saved LoRA adapter from phase 3 of the final HexaBee training lineage. The PT adapter is continued during multilingual SFT; the translation adapter is initialized afresh after the intermediate merge.",
+      "scope": "Phase 3 adapter",
+      "contents": "Adapter Safetensors, normalized adapter configuration, tokenizer/processor, and recorded training/evaluation statistics. Optimizer state, serialized Python training arguments, and unrelated checkpoints are excluded.",
+      "provenance": "This is the actual saved adapter from the final translator lineage. Its exact rank, alpha, dropout and target module inventory are recorded in `release_stats.json`; those values take precedence over a nearby YAML file that may have changed. Load on `Iman998/HexaBee-4B-Multilingual-Base`. Public repository names identify the role instead of historical local version suffixes.",
+      "limitations": "The released checkpoint has not been evaluated for image tasks, despite retaining the Gemma 3 multimodal architecture. Intermediate checkpoints have no independent matched translation evaluation. Quality can vary by language, domain, and input length.",
+      "base_model": "Iman998/HexaBee-4B-Multilingual-Base",
+      "source": "data/release-inputs/lora-translation"
+    },
+    {
+      "key": "data-pt",
+      "repo_id": "Iman998/HexaBee-Wikipedia-PT",
+      "repo_type": "dataset",
+      "kind": "text",
+      "title": "HexaBee · Wikipedia Foundations",
+      "subtitle": "Wikipedia text, organized by language.",
+      "banner": "04-phase1-knowledge.png",
+      "description": "Raw Wikipedia text sources registered for the executed continued-pretraining stage. The Persian source was registered four times in the historical mixture; this release stores it once and documents the sampling multiplicity.",
+      "scope": "Phase 1 raw-text sources",
+      "contents": "One Parquet configuration per unique registered source: Persian, English, Arabic, Chinese, and Egyptian Arabic. Each record contains `id`, `text`, and `language`. These are raw rows, not packed training sequences.",
+      "provenance": "The executed PT adapter card lists wiki-en, fawiki1, wiki-ar, fawiki2, wiki-zh, fawiki3, wiki-arz, fawiki4. The four fawiki registrations reference the same file. The trainer reported 3,399,664 training examples after preprocessing; raw source counts measured below are a different unit. Original article revisions and historical source hashes were not captured. The five PT sources differ from the six translation-evaluation languages.",
+      "limitations": "Historical exports may contain empty strings, imperfect generated text and instruction conflicts. Source row reuse is not independent evidence. See measured release statistics and the accompanying evaluation scope.",
+      "languages": [
+        "fa",
+        "en",
+        "ar",
+        "zh",
+        "arz"
+      ],
+      "tasks": [
+        "text-generation"
+      ],
+      "sources": [
+        {
+          "path": "data/release-inputs/data-pt/wiki_fa.jsonl",
+          "config": "fa",
+          "split": "train",
+          "kind": "text",
+          "component": "wiki_fa",
+          "language": "fa"
+        },
+        {
+          "path": "data/release-inputs/data-pt/wiki_en.jsonl",
+          "config": "en",
+          "split": "train",
+          "kind": "text",
+          "component": "wiki_en",
+          "language": "en"
+        },
+        {
+          "path": "data/release-inputs/data-pt/wiki_ar.jsonl",
+          "config": "ar",
+          "split": "train",
+          "kind": "text",
+          "component": "wiki_ar",
+          "language": "ar"
+        },
+        {
+          "path": "data/release-inputs/data-pt/wiki_zh.jsonl",
+          "config": "zh",
+          "split": "train",
+          "kind": "text",
+          "component": "wiki_zh",
+          "language": "zh"
+        },
+        {
+          "path": "data/release-inputs/data-pt/wiki_arz.jsonl",
+          "config": "arz",
+          "split": "train",
+          "kind": "text",
+          "component": "wiki_arz",
+          "language": "arz"
+        }
+      ]
+    },
+    {
+      "key": "data-sft",
+      "repo_id": "Iman998/HexaBee-Multilingual-SFT",
+      "repo_type": "dataset",
+      "kind": "sft",
+      "title": "HexaBee · Multilingual Answering & Translation",
+      "subtitle": "Ask in one language. Answer in another.",
+      "banner": "05-phase2-multilingual-qa.png",
+      "description": "The exact 22 final SFT exports used in phase 2: **19,458,332 answering records**, including **5,759,806 cross-language QA records**, plus **10,695,072 answer-text translations**. The question language and requested answer language can differ; answering a question is distinct from translating its wording.",
+      "scope": "Phase 2 · 30,153,404 SFT records",
+      "contents": "22 configurations named by neutral source group and task. `system`, `instruct`, `output` are original training strings. Component/task metadata and unique positional content hashes are added. Per-row language labels were stripped in the final original exports and are null here, rather than guessed.",
+      "provenance": "The corpus derives from 2,025,730 source rows expanded by language and style. Gemma 3 27B IT produced Persian→English/Arabic and English→Chinese/Hebrew/Spanish variants. The stage used all six answer-translation groups plus complete, moderate, formal and informal answering exports. The 329 construction components combine into 22 final files. 1,961 complete-answer records have known language-directive conflicts; complete QA covers 27 cross-language directions.",
+      "limitations": "Historical exports may contain empty strings, imperfect generated text and instruction conflicts. Source row reuse is not independent evidence. See measured release statistics and the accompanying evaluation scope.",
+      "tasks": [
+        "question-answering",
+        "translation",
+        "text-generation"
+      ],
+      "sources": [
+        {
+          "path": "data/release-inputs/data-sft/gqa_a_complete.jsonl",
+          "config": "gqa_a_complete",
+          "split": "train",
+          "kind": "sft",
+          "component": "gqa_a_complete",
+          "task": "complete",
+          "expected_rows": 2951728
+        },
+        {
+          "path": "data/release-inputs/data-sft/gqa_a_translate.jsonl",
+          "config": "gqa_a_translate",
+          "split": "train",
+          "kind": "sft",
+          "component": "gqa_a_translate",
+          "task": "translate",
+          "expected_rows": 1757216
+        },
+        {
+          "path": "data/release-inputs/data-sft/qa_a_complete.jsonl",
+          "config": "qa_a_complete",
+          "split": "train",
+          "kind": "sft",
+          "component": "qa_a_complete",
+          "task": "complete",
+          "expected_rows": 5877201
+        },
+        {
+          "path": "data/release-inputs/data-sft/qa_a_formal.jsonl",
+          "config": "qa_a_formal",
+          "split": "train",
+          "kind": "sft",
+          "component": "qa_a_formal",
+          "task": "formal",
+          "expected_rows": 1063425
+        },
+        {
+          "path": "data/release-inputs/data-sft/qa_a_translate.jsonl",
+          "config": "qa_a_translate",
+          "split": "train",
+          "kind": "sft",
+          "component": "qa_a_translate",
+          "task": "translate",
+          "expected_rows": 4508930
+        },
+        {
+          "path": "data/release-inputs/data-sft/title_a_complete.jsonl",
+          "config": "title_a_complete",
+          "split": "train",
+          "kind": "sft",
+          "component": "title_a_complete",
+          "task": "complete",
+          "expected_rows": 3069029
+        },
+        {
+          "path": "data/release-inputs/data-sft/title_a_formal.jsonl",
+          "config": "title_a_formal",
+          "split": "train",
+          "kind": "sft",
+          "component": "title_a_formal",
+          "task": "formal",
+          "expected_rows": 646570
+        },
+        {
+          "path": "data/release-inputs/data-sft/title_a_informal.jsonl",
+          "config": "title_a_informal",
+          "split": "train",
+          "kind": "sft",
+          "component": "title_a_informal",
+          "task": "informal",
+          "expected_rows": 560356
+        },
+        {
+          "path": "data/release-inputs/data-sft/title_a_translate.jsonl",
+          "config": "title_a_translate",
+          "split": "train",
+          "kind": "sft",
+          "component": "title_a_translate",
+          "task": "translate",
+          "expected_rows": 2103474
+        },
+        {
+          "path": "data/release-inputs/data-sft/gqa_b_balance.jsonl",
+          "config": "gqa_b_balance",
+          "split": "train",
+          "kind": "sft",
+          "component": "gqa_b_balance",
+          "task": "balance",
+          "expected_rows": 208364
+        },
+        {
+          "path": "data/release-inputs/data-sft/gqa_b_complete.jsonl",
+          "config": "gqa_b_complete",
+          "split": "train",
+          "kind": "sft",
+          "component": "gqa_b_complete",
+          "task": "complete",
+          "expected_rows": 1000829
+        },
+        {
+          "path": "data/release-inputs/data-sft/gqa_b_formal.jsonl",
+          "config": "gqa_b_formal",
+          "split": "train",
+          "kind": "sft",
+          "component": "gqa_b_formal",
+          "task": "formal",
+          "expected_rows": 330194
+        },
+        {
+          "path": "data/release-inputs/data-sft/gqa_b_informal.jsonl",
+          "config": "gqa_b_informal",
+          "split": "train",
+          "kind": "sft",
+          "component": "gqa_b_informal",
+          "task": "informal",
+          "expected_rows": 284650
+        },
+        {
+          "path": "data/release-inputs/data-sft/gqa_b_translate.jsonl",
+          "config": "gqa_b_translate",
+          "split": "train",
+          "kind": "sft",
+          "component": "gqa_b_translate",
+          "task": "translate",
+          "expected_rows": 724152
+        },
+        {
+          "path": "data/release-inputs/data-sft/qa_b_balance.jsonl",
+          "config": "qa_b_balance",
+          "split": "train",
+          "kind": "sft",
+          "component": "qa_b_balance",
+          "task": "balance",
+          "expected_rows": 300875
+        },
+        {
+          "path": "data/release-inputs/data-sft/qa_b_complete.jsonl",
+          "config": "qa_b_complete",
+          "split": "train",
+          "kind": "sft",
+          "component": "qa_b_complete",
+          "task": "complete",
+          "expected_rows": 1362984
+        },
+        {
+          "path": "data/release-inputs/data-sft/qa_b_formal.jsonl",
+          "config": "qa_b_formal",
+          "split": "train",
+          "kind": "sft",
+          "component": "qa_b_formal",
+          "task": "formal",
+          "expected_rows": 476797
+        },
+        {
+          "path": "data/release-inputs/data-sft/qa_b_informal.jsonl",
+          "config": "qa_b_informal",
+          "split": "train",
+          "kind": "sft",
+          "component": "qa_b_informal",
+          "task": "informal",
+          "expected_rows": 411033
+        },
+        {
+          "path": "data/release-inputs/data-sft/qa_b_translate.jsonl",
+          "config": "qa_b_translate",
+          "split": "train",
+          "kind": "sft",
+          "component": "qa_b_translate",
+          "task": "translate",
+          "expected_rows": 1045662
+        },
+        {
+          "path": "data/release-inputs/data-sft/title_b_complete.jsonl",
+          "config": "title_b_complete",
+          "split": "train",
+          "kind": "sft",
+          "component": "title_b_complete",
+          "task": "complete",
+          "expected_rows": 766279
+        },
+        {
+          "path": "data/release-inputs/data-sft/title_b_informal.jsonl",
+          "config": "title_b_informal",
+          "split": "train",
+          "kind": "sft",
+          "component": "title_b_informal",
+          "task": "informal",
+          "expected_rows": 148018
+        },
+        {
+          "path": "data/release-inputs/data-sft/title_b_translate.jsonl",
+          "config": "title_b_translate",
+          "split": "train",
+          "kind": "sft",
+          "component": "title_b_translate",
+          "task": "translate",
+          "expected_rows": 555638
+        }
+      ]
+    },
+    {
+      "key": "data-translation",
+      "repo_id": "Iman998/HexaBee-Bidirectional-Translation",
+      "repo_type": "dataset",
+      "kind": "sft",
+      "title": "HexaBee · Bidirectional Translation",
+      "subtitle": "Aligned meaning. Both directions.",
+      "banner": "06-phase3-translation.png",
+      "description": "The independently generated synthetic translation corpus and the final forward/reverse SFT data. Includes the original held-out translation test split and the original train split without creating a new split.",
+      "scope": "Phase 3 · pairs + final SFT",
+      "contents": "`aligned_pairs`: 329,146 train and 36,572 test pairs. `forward_sft` and `reverse_sft`: 329,137 training rows each. Together the latter two configurations are the 658,274 final SFT examples. Pair rows and SFT rows are distinct views of overlapping content; their counts must not be interpreted as independent examples.",
+      "provenance": "Native source generation metadata identifies DeepSeek-V3.1. Translation generation uses the service alias deepseek-chat, without an immutable backend revision for every call. The historical split was unseeded; these stored memberships are preserved. Nine train pairs were removed before reversal. Reverse examples swap aligned texts and do not constitute model-generated back-translation.",
+      "limitations": "Historical exports may contain empty strings, imperfect generated text and instruction conflicts. Source row reuse is not independent evidence. See measured release statistics and the accompanying evaluation scope.",
+      "sources": [
+        {
+          "path": "data/release-inputs/data-translation/aligned_train.jsonl",
+          "config": "aligned_pairs",
+          "split": "train",
+          "kind": "pairs",
+          "component": "aligned_train",
+          "expected_rows": 329146
+        },
+        {
+          "path": "data/release-inputs/data-translation/aligned_test.jsonl",
+          "config": "aligned_pairs",
+          "split": "test",
+          "kind": "pairs",
+          "component": "aligned_test",
+          "expected_rows": 36572
+        },
+        {
+          "path": "data/release-inputs/data-translation/forward_sft.jsonl",
+          "config": "forward_sft",
+          "split": "train",
+          "kind": "sft",
+          "component": "forward_sft",
+          "task": "translate",
+          "expected_rows": 329137
+        },
+        {
+          "path": "data/release-inputs/data-translation/reverse_sft.jsonl",
+          "config": "reverse_sft",
+          "split": "train",
+          "kind": "sft",
+          "component": "reverse_sft",
+          "task": "translate",
+          "expected_rows": 329137
+        }
+      ]
+    },
+    {
+      "key": "prompts",
+      "repo_id": "Iman998/HexaBee-System-Prompts",
+      "repo_type": "dataset",
+      "kind": "prompts",
+      "title": "HexaBee · The Prompt Hive",
+      "subtitle": "Language, style, and translation instructions.",
+      "banner": "07-system-prompts.png",
+      "description": "Original system-instruction pools for response language, answer extent, style, and translation directions. **341,142 imported rows** are preserved, including duplicate paraphrases with their historical sampling mass.",
+      "scope": "Independent system-prompt inventory",
+      "contents": "Normalized fields: `id`, `component`, `language` (instruction wording), optional `source` and `target`, and `text`. Six components: language, complete, moderate, formal, informal and translate. This is the full imported inventory, not the 36 illustrative seeds in the code demo.",
+      "provenance": "Original *_combined.json prompt files were imported with their directional metadata. Hidden notebook checkpoint copies were ignored. Translation filenames encode wording/source/target languages; answering filenames encode wording/target. Duplicate real pool rows are retained. Pool lengths are measured on these archived files, not inferred from requested paraphrase counts.",
+      "limitations": "Historical exports may contain empty strings, imperfect generated text and instruction conflicts. Source row reuse is not independent evidence. See measured release statistics and the accompanying evaluation scope.",
+      "tasks": [
+        "text-generation"
+      ],
+      "source": "data/release-inputs/prompts"
+    },
+    {
+      "key": "outputs",
+      "repo_id": "Iman998/HexaBee-Model-Outputs",
+      "repo_type": "dataset",
+      "kind": "predictions",
+      "title": "HexaBee · Translation Archive",
+      "subtitle": "Every stored prediction, independently inspectable.",
+      "banner": "08-model-outputs.png",
+      "description": "Stored candidate translations from HexaBee-4B and the public Gemma 3 4B/12B IT baselines. Full-test predictions and the matched judged subset remain distinct configurations.",
+      "scope": "Raw model predictions and judge responses",
+      "contents": "For each model: a full-test configuration (36,572 rows) and a judged configuration (300 rows). Fields preserve source/reference strings and the candidate; null candidates become empty strings. Judged configurations additionally preserve both raw judge objects as JSON strings, including the original raw response for reparsing valid zero scores.",
+      "provenance": "All model files refer to the same stored source/reference identities; automatic evaluation checks strict identity pairing. The matched judge subset has ten examples in each of 30 directions. Archived inference templates differ between models; the outputs are not claimed to be a controlled equal-prompt comparison. PCT-4B is renamed HexaBee-4B only at the model-label level.",
+      "limitations": "Historical exports may contain empty strings, imperfect generated text and instruction conflicts. Source row reuse is not independent evidence. See measured release statistics and the accompanying evaluation scope.",
+      "sources": [
+        {
+          "path": "data/release-inputs/outputs/gemma4_full.jsonl",
+          "config": "gemma4_full",
+          "split": "test",
+          "kind": "predictions",
+          "component": "gemma4_full",
+          "model": "Gemma 3 4B IT",
+          "candidate_field": "gemma-3-4b-it_translation",
+          "expected_rows": 36572
+        },
+        {
+          "path": "data/release-inputs/outputs/gemma4_judged.jsonl",
+          "config": "gemma4_judged",
+          "split": "test",
+          "kind": "predictions",
+          "component": "gemma4_judged",
+          "model": "Gemma 3 4B IT",
+          "candidate_field": "gemma-3-4b-it_translation",
+          "expected_rows": 300
+        },
+        {
+          "path": "data/release-inputs/outputs/hexabee_full.jsonl",
+          "config": "hexabee_full",
+          "split": "test",
+          "kind": "predictions",
+          "component": "hexabee_full",
+          "model": "HexaBee-4B",
+          "candidate_field": "gemma-3-4b-translate_translation",
+          "expected_rows": 36572
+        },
+        {
+          "path": "data/release-inputs/outputs/hexabee_judged.jsonl",
+          "config": "hexabee_judged",
+          "split": "test",
+          "kind": "predictions",
+          "component": "hexabee_judged",
+          "model": "HexaBee-4B",
+          "candidate_field": "gemma-3-4b-translate_translation",
+          "expected_rows": 300
+        },
+        {
+          "path": "data/release-inputs/outputs/gemma12_full.jsonl",
+          "config": "gemma12_full",
+          "split": "test",
+          "kind": "predictions",
+          "component": "gemma12_full",
+          "model": "Gemma 3 12B IT",
+          "candidate_field": "gemma-12_translation",
+          "expected_rows": 36572
+        },
+        {
+          "path": "data/release-inputs/outputs/gemma12_judged.jsonl",
+          "config": "gemma12_judged",
+          "split": "test",
+          "kind": "predictions",
+          "component": "gemma12_judged",
+          "model": "Gemma 3 12B IT",
+          "candidate_field": "gemma-12_translation",
+          "expected_rows": 300
+        }
+      ]
+    },
+    {
+      "key": "evaluation",
+      "repo_id": "Iman998/HexaBee-Evaluation",
+      "repo_type": "dataset",
+      "kind": "metrics",
+      "title": "HexaBee · Evaluation Atlas",
+      "subtitle": "Thirty directions. Three systems. Traceable evidence.",
+      "banner": "09-evaluation.png",
+      "description": "All translation directions, automatic metrics, eight-dimension model judging, paired bootstrap intervals, and the data-composition audit in one independently downloadable evaluation repository.",
+      "scope": "Numeric results · three systems · 30 directions",
+      "contents": "`all_direction_metrics.csv`: 90 system/direction rows with BLEU, chrF, chrF++, TER, COMET, judge means and all eight rubric dimensions in both modes. `paired_scores.csv`: 900 score-only rows for paired intervals. Additional JSON files contain metric signatures, sufficient statistics, COMET checkpoint provenance, and audited phase-2 data counts. Figures are included in PNG, SVG and PDF formats. The expandable tables below compare all models separately for each target language.",
+      "provenance": "Full test: 36,572 examples per model. Judge subset: 300 matched examples per model, ten per direction. SacreBLEU 2.5.1; BLEU zh tokenizer for Chinese targets and 13a otherwise; chrF character order 6; chrF++ word order 2; TER normalized with Asian support; unbabel-comet 2.2.7 and wmt22-comet-da (512-position encoder). Judge intervals use 10,000 paired direction-stratified bootstrap replicates and seed 20260912. Zero scores were recovered from raw responses rather than discarded.",
+      "limitations": "Historical exports may contain empty strings, imperfect generated text and instruction conflicts. Source row reuse is not independent evidence. See measured release statistics and the accompanying evaluation scope.",
+      "tasks": [
+        "translation"
+      ],
+      "source": "data/release-inputs/evaluation",
+      "figures": "figures"
+    }
+  ],
+  "upload_policy": {
+    "connect_timeout_seconds": 180,
+    "transfer_timeout_seconds": 1800,
+    "watchdog_seconds": 3600,
+    "restart_delay_seconds": 30,
+    "max_restart_delay_seconds": 300,
+    "blocked_retry_seconds": 900
+  }
+}

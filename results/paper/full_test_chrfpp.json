@@ -1,0 +1,398 @@
+{
+  "metric": "chrF++",
+  "processing": "raw hypotheses; null/empty outputs scored as empty; no stripping quotes or metadata",
+  "models": {
+    "Gemma 3 4B IT": {
+      "n": 36572,
+      "empty_outputs": 31,
+      "chrfpp": 60.77457651968737,
+      "macro_direction_chrfpp": 57.1066072666196,
+      "signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.5.1",
+      "per_direction": {
+        "Arabic-Chinese": {
+          "n": 1201,
+          "chrfpp": 30.92542158007297
+        },
+        "Arabic-English": {
+          "n": 1200,
+          "chrfpp": 74.31794482514682
+        },
+        "Arabic-Hebrew": {
+          "n": 1255,
+          "chrfpp": 53.52198186354246
+        },
+        "Arabic-Persian": {
+          "n": 1228,
+          "chrfpp": 55.2856742475751
+        },
+        "Arabic-Spanish": {
+          "n": 1257,
+          "chrfpp": 73.59444206166633
+        },
+        "Chinese-Arabic": {
+          "n": 1229,
+          "chrfpp": 48.280017048879984
+        },
+        "Chinese-English": {
+          "n": 1213,
+          "chrfpp": 62.02916623511705
+        },
+        "Chinese-Hebrew": {
+          "n": 1232,
+          "chrfpp": 38.42145682598693
+        },
+        "Chinese-Persian": {
+          "n": 1208,
+          "chrfpp": 40.286800121201
+        },
+        "Chinese-Spanish": {
+          "n": 1173,
+          "chrfpp": 53.7219380461088
+        },
+        "English-Arabic": {
+          "n": 1213,
+          "chrfpp": 63.77281514391616
+        },
+        "English-Chinese": {
+          "n": 1276,
+          "chrfpp": 27.56311536109019
+        },
+        "English-Hebrew": {
+          "n": 1216,
+          "chrfpp": 59.126356999073494
+        },
+        "English-Persian": {
+          "n": 1239,
+          "chrfpp": 60.480695307065524
+        },
+        "English-Spanish": {
+          "n": 1188,
+          "chrfpp": 82.62725525805679
+        },
+        "Hebrew-Arabic": {
+          "n": 1230,
+          "chrfpp": 61.226469794377294
+        },
+        "Hebrew-Chinese": {
+          "n": 1202,
+          "chrfpp": 37.21793474210921
+        },
+        "Hebrew-English": {
+          "n": 1185,
+          "chrfpp": 76.71855906816785
+        },
+        "Hebrew-Persian": {
+          "n": 1198,
+          "chrfpp": 62.67227112439804
+        },
+        "Hebrew-Spanish": {
+          "n": 1183,
+          "chrfpp": 70.79448595531025
+        },
+        "Persian-Arabic": {
+          "n": 1228,
+          "chrfpp": 60.054635830767666
+        },
+        "Persian-Chinese": {
+          "n": 1251,
+          "chrfpp": 34.0105552637281
+        },
+        "Persian-English": {
+          "n": 1234,
+          "chrfpp": 75.52882364501255
+        },
+        "Persian-Hebrew": {
+          "n": 1238,
+          "chrfpp": 56.53799697097397
+        },
+        "Persian-Spanish": {
+          "n": 1241,
+          "chrfpp": 75.4534076748936
+        },
+        "Spanish-Arabic": {
+          "n": 1220,
+          "chrfpp": 63.33432664789418
+        },
+        "Spanish-Chinese": {
+          "n": 1205,
+          "chrfpp": 25.148821971181512
+        },
+        "Spanish-English": {
+          "n": 1178,
+          "chrfpp": 73.41790200949559
+        },
+        "Spanish-Hebrew": {
+          "n": 1255,
+          "chrfpp": 57.50164359395132
+        },
+        "Spanish-Persian": {
+          "n": 1196,
+          "chrfpp": 59.62530278182715
+        }
+      },
+      "source_file": "translations.json"
+    },
+    "PCT-4B": {
+      "n": 36572,
+      "empty_outputs": 0,
+      "chrfpp": 77.29604810612712,
+      "macro_direction_chrfpp": 73.7485782067318,
+      "signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.5.1",
+      "per_direction": {
+        "Arabic-Chinese": {
+          "n": 1201,
+          "chrfpp": 49.12011611770299
+        },
+        "Arabic-English": {
+          "n": 1200,
+          "chrfpp": 87.58460569358468
+        },
+        "Arabic-Hebrew": {
+          "n": 1255,
+          "chrfpp": 75.4957785596901
+        },
+        "Arabic-Persian": {
+          "n": 1228,
+          "chrfpp": 79.04552185391154
+        },
+        "Arabic-Spanish": {
+          "n": 1257,
+          "chrfpp": 87.73064544994386
+        },
+        "Chinese-Arabic": {
+          "n": 1229,
+          "chrfpp": 66.33606298165236
+        },
+        "Chinese-English": {
+          "n": 1213,
+          "chrfpp": 77.87413601403905
+        },
+        "Chinese-Hebrew": {
+          "n": 1232,
+          "chrfpp": 51.35855695744639
+        },
+        "Chinese-Persian": {
+          "n": 1208,
+          "chrfpp": 67.37824901409653
+        },
+        "Chinese-Spanish": {
+          "n": 1173,
+          "chrfpp": 78.11070737256051
+        },
+        "English-Arabic": {
+          "n": 1213,
+          "chrfpp": 74.65656651604317
+        },
+        "English-Chinese": {
+          "n": 1276,
+          "chrfpp": 45.2993147624678
+        },
+        "English-Hebrew": {
+          "n": 1216,
+          "chrfpp": 72.03983825528162
+        },
+        "English-Persian": {
+          "n": 1239,
+          "chrfpp": 74.80939699500944
+        },
+        "English-Spanish": {
+          "n": 1188,
+          "chrfpp": 89.2669695535656
+        },
+        "Hebrew-Arabic": {
+          "n": 1230,
+          "chrfpp": 79.43593228413856
+        },
+        "Hebrew-Chinese": {
+          "n": 1202,
+          "chrfpp": 51.799232363808954
+        },
+        "Hebrew-English": {
+          "n": 1185,
+          "chrfpp": 89.46997616637164
+        },
+        "Hebrew-Persian": {
+          "n": 1198,
+          "chrfpp": 80.26263377311508
+        },
+        "Hebrew-Spanish": {
+          "n": 1183,
+          "chrfpp": 88.42979387605791
+        },
+        "Persian-Arabic": {
+          "n": 1228,
+          "chrfpp": 78.00470671315456
+        },
+        "Persian-Chinese": {
+          "n": 1251,
+          "chrfpp": 50.30288557612261
+        },
+        "Persian-English": {
+          "n": 1234,
+          "chrfpp": 87.22337465318382
+        },
+        "Persian-Hebrew": {
+          "n": 1238,
+          "chrfpp": 74.67024566396474
+        },
+        "Persian-Spanish": {
+          "n": 1241,
+          "chrfpp": 87.26653078871581
+        },
+        "Spanish-Arabic": {
+          "n": 1220,
+          "chrfpp": 77.0747430845965
+        },
+        "Spanish-Chinese": {
+          "n": 1205,
+          "chrfpp": 46.835620145039286
+        },
+        "Spanish-English": {
+          "n": 1178,
+          "chrfpp": 91.62854188352647
+        },
+        "Spanish-Hebrew": {
+          "n": 1255,
+          "chrfpp": 75.9204609460264
+        },
+        "Spanish-Persian": {
+          "n": 1196,
+          "chrfpp": 78.02620218713668
+        }
+      },
+      "source_file": "translations.json"
+    },
+    "Gemma 3 12B IT": {
+      "n": 36572,
+      "empty_outputs": 0,
+      "chrfpp": 71.13110215798253,
+      "macro_direction_chrfpp": 66.82787815524094,
+      "signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.5.1",
+      "per_direction": {
+        "Arabic-Chinese": {
+          "n": 1201,
+          "chrfpp": 37.13401045995061
+        },
+        "Arabic-English": {
+          "n": 1200,
+          "chrfpp": 84.9676245925085
+        },
+        "Arabic-Hebrew": {
+          "n": 1255,
+          "chrfpp": 67.01030262032032
+        },
+        "Arabic-Persian": {
+          "n": 1228,
+          "chrfpp": 69.84689419184392
+        },
+        "Arabic-Spanish": {
+          "n": 1257,
+          "chrfpp": 84.07836858592636
+        },
+        "Chinese-Arabic": {
+          "n": 1229,
+          "chrfpp": 60.9078447296386
+        },
+        "Chinese-English": {
+          "n": 1213,
+          "chrfpp": 72.87255216899051
+        },
+        "Chinese-Hebrew": {
+          "n": 1232,
+          "chrfpp": 47.272695239743186
+        },
+        "Chinese-Persian": {
+          "n": 1208,
+          "chrfpp": 61.27121936843453
+        },
+        "Chinese-Spanish": {
+          "n": 1173,
+          "chrfpp": 73.37367706900089
+        },
+        "English-Arabic": {
+          "n": 1213,
+          "chrfpp": 66.08576792453916
+        },
+        "English-Chinese": {
+          "n": 1276,
+          "chrfpp": 29.939983313436162
+        },
+        "English-Hebrew": {
+          "n": 1216,
+          "chrfpp": 64.16535889458278
+        },
+        "English-Persian": {
+          "n": 1239,
+          "chrfpp": 66.5977658926344
+        },
+        "English-Spanish": {
+          "n": 1188,
+          "chrfpp": 86.36618215149686
+        },
+        "Hebrew-Arabic": {
+          "n": 1230,
+          "chrfpp": 72.24645008492193
+        },
+        "Hebrew-Chinese": {
+          "n": 1202,
+          "chrfpp": 40.967017806191265
+        },
+        "Hebrew-English": {
+          "n": 1185,
+          "chrfpp": 86.82359557412491
+        },
+        "Hebrew-Persian": {
+          "n": 1198,
+          "chrfpp": 72.88967054861249
+        },
+        "Hebrew-Spanish": {
+          "n": 1183,
+          "chrfpp": 84.6013389190335
+        },
+        "Persian-Arabic": {
+          "n": 1228,
+          "chrfpp": 70.14169314037525
+        },
+        "Persian-Chinese": {
+          "n": 1251,
+          "chrfpp": 40.579891698726705
+        },
+        "Persian-English": {
+          "n": 1234,
+          "chrfpp": 83.20555038604799
+        },
+        "Persian-Hebrew": {
+          "n": 1238,
+          "chrfpp": 66.78921281737354
+        },
+        "Persian-Spanish": {
+          "n": 1241,
+          "chrfpp": 83.34366659150638
+        },
+        "Spanish-Arabic": {
+          "n": 1220,
+          "chrfpp": 69.05582343547482
+        },
+        "Spanish-Chinese": {
+          "n": 1205,
+          "chrfpp": 34.238639482220904
+        },
+        "Spanish-English": {
+          "n": 1178,
+          "chrfpp": 88.91342314419363
+        },
+        "Spanish-Hebrew": {
+          "n": 1255,
+          "chrfpp": 68.67987612546
+        },
+        "Spanish-Persian": {
+          "n": 1196,
+          "chrfpp": 70.47024769991806
+        }
+      },
+      "source_file": "translations.json"
+    }
+  },
+  "all_model_id_sets_identical": true,
+  "n_unique_paired_items": 36572
+}

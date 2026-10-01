@@ -1,0 +1,41 @@
+{
+  "seed": 42,
+  "languages": [
+    "fa",
+    "en",
+    "ar",
+    "zh",
+    "he",
+    "es"
+  ],
+  "per_topic_language": 1,
+  "attributes": {
+    "genre": [
+      "explanation",
+      "dialogue",
+      "news-style report",
+      "technical description"
+    ],
+    "register": [
+      "formal",
+      "neutral",
+      "informal"
+    ],
+    "complexity": [
+      "simple",
+      "intermediate",
+      "advanced"
+    ],
+    "length": [
+      "80–150 words",
+      "150–300 words"
+    ],
+    "noise": [
+      "none"
+    ],
+    "style": [
+      "natural native prose",
+      "clear factual explanation"
+    ]
+  }
+}

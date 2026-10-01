@@ -1,0 +1,1226 @@
+{
+  "schema_version": 1,
+  "description": "Historical MT fractions and prompt policy on canonical answer columns. Exact original rows/order and pool order are required; missing-column fallbacks are not fabricated.",
+  "rules": [
+    {
+      "id": "title_a_translate_ar_en",
+      "family": "title_a",
+      "task": "translate",
+      "source": "ar",
+      "target": "en",
+      "column_policy": {
+        "instruct": {
+          "Arabic_output": 1
+        },
+        "output": {
+          "English_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_arabic_english_combined.json",
+            "weight": 0.07
+          },
+          {
+            "file": "system_prompt_translate_english_arabic_english_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_spanish_arabic_english_combined.json",
+            "weight": 0.07
+          },
+          {
+            "file": "system_prompt_translate_chinese_arabic_english_combined.json",
+            "weight": 0.01
+          },
+          {
+            "file": "system_prompt_translate_arabic_arabic_english_combined.json",
+            "weight": 0.3
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.25,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 107762,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_ar_es",
+      "family": "title_a",
+      "task": "translate",
+      "source": "ar",
+      "target": "es",
+      "column_policy": {
+        "instruct": {
+          "Arabic_output": 1
+        },
+        "output": {
+          "Spanish_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_arabic_spanish_combined.json",
+            "weight": 0.07
+          },
+          {
+            "file": "system_prompt_translate_english_arabic_spanish_combined.json",
+            "weight": 0.07
+          },
+          {
+            "file": "system_prompt_translate_spanish_arabic_spanish_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_chinese_arabic_spanish_combined.json",
+            "weight": 0.01
+          },
+          {
+            "file": "system_prompt_translate_arabic_arabic_spanish_combined.json",
+            "weight": 0.3
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.08,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 34484,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_ar_fa",
+      "family": "title_a",
+      "task": "translate",
+      "source": "ar",
+      "target": "fa",
+      "column_policy": {
+        "instruct": {
+          "Arabic_output": 1
+        },
+        "output": {
+          "revise_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_arabic_persian_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_english_arabic_persian_combined.json",
+            "weight": 0.05
+          },
+          {
+            "file": "system_prompt_translate_spanish_arabic_persian_combined.json",
+            "weight": 0.05
+          },
+          {
+            "file": "system_prompt_translate_chinese_arabic_persian_combined.json",
+            "weight": 0.05
+          },
+          {
+            "file": "system_prompt_translate_arabic_arabic_persian_combined.json",
+            "weight": 0.3
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.25,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 107762,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_ar_zh",
+      "family": "title_a",
+      "task": "translate",
+      "source": "ar",
+      "target": "zh",
+      "column_policy": {
+        "instruct": {
+          "Arabic_output": 1
+        },
+        "output": {
+          "Chinese_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_arabic_chinese_combined.json",
+            "weight": 0.11
+          },
+          {
+            "file": "system_prompt_translate_english_arabic_chinese_combined.json",
+            "weight": 0.02
+          },
+          {
+            "file": "system_prompt_translate_spanish_arabic_chinese_combined.json",
+            "weight": 0.02
+          },
+          {
+            "file": "system_prompt_translate_chinese_arabic_chinese_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_arabic_arabic_chinese_combined.json",
+            "weight": 0.3
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.08,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 34484,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_en_ar",
+      "family": "title_a",
+      "task": "translate",
+      "source": "en",
+      "target": "ar",
+      "column_policy": {
+        "instruct": {
+          "English_output": 1
+        },
+        "output": {
+          "Arabic_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_english_arabic_combined.json",
+            "weight": 0.07
+          },
+          {
+            "file": "system_prompt_translate_english_english_arabic_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_spanish_english_arabic_combined.json",
+            "weight": 0.07
+          },
+          {
+            "file": "system_prompt_translate_chinese_english_arabic_combined.json",
+            "weight": 0.01
+          },
+          {
+            "file": "system_prompt_translate_arabic_english_arabic_combined.json",
+            "weight": 0.55
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.25,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 107762,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_en_es",
+      "family": "title_a",
+      "task": "translate",
+      "source": "en",
+      "target": "es",
+      "column_policy": {
+        "instruct": {
+          "English_output": 1
+        },
+        "output": {
+          "Spanish_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_english_spanish_combined.json",
+            "weight": 0.05
+          },
+          {
+            "file": "system_prompt_translate_english_english_spanish_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_spanish_english_spanish_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_chinese_english_spanish_combined.json",
+            "weight": 0.05
+          },
+          {
+            "file": "system_prompt_translate_arabic_english_spanish_combined.json",
+            "weight": 0.05
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.25,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 107762,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_en_fa",
+      "family": "title_a",
+      "task": "translate",
+      "source": "en",
+      "target": "fa",
+      "column_policy": {
+        "instruct": {
+          "English_output": 1
+        },
+        "output": {
+          "revise_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_english_persian_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_english_english_persian_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_spanish_english_persian_combined.json",
+            "weight": 0.07
+          },
+          {
+            "file": "system_prompt_translate_chinese_english_persian_combined.json",
+            "weight": 0.01
+          },
+          {
+            "file": "system_prompt_translate_arabic_english_persian_combined.json",
+            "weight": 0.07
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.7,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 301733,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_en_zh",
+      "family": "title_a",
+      "task": "translate",
+      "source": "en",
+      "target": "zh",
+      "column_policy": {
+        "instruct": {
+          "English_output": 1
+        },
+        "output": {
+          "Chinese_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_english_chinese_combined.json",
+            "weight": 0.02
+          },
+          {
+            "file": "system_prompt_translate_english_english_chinese_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_spanish_english_chinese_combined.json",
+            "weight": 0.11
+          },
+          {
+            "file": "system_prompt_translate_chinese_english_chinese_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_arabic_english_chinese_combined.json",
+            "weight": 0.02
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.25,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 107762,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_es_ar",
+      "family": "title_a",
+      "task": "translate",
+      "source": "es",
+      "target": "ar",
+      "column_policy": {
+        "instruct": {
+          "Spanish_output": 1
+        },
+        "output": {
+          "Arabic_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_spanish_arabic_combined.json",
+            "weight": 0.07
+          },
+          {
+            "file": "system_prompt_translate_english_spanish_arabic_combined.json",
+            "weight": 0.07
+          },
+          {
+            "file": "system_prompt_translate_spanish_spanish_arabic_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_chinese_spanish_arabic_combined.json",
+            "weight": 0.01
+          },
+          {
+            "file": "system_prompt_translate_arabic_spanish_arabic_combined.json",
+            "weight": 0.55
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.08,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 34484,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_es_en",
+      "family": "title_a",
+      "task": "translate",
+      "source": "es",
+      "target": "en",
+      "column_policy": {
+        "instruct": {
+          "Spanish_output": 1
+        },
+        "output": {
+          "English_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_spanish_english_combined.json",
+            "weight": 0.05
+          },
+          {
+            "file": "system_prompt_translate_english_spanish_english_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_spanish_spanish_english_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_chinese_spanish_english_combined.json",
+            "weight": 0.05
+          },
+          {
+            "file": "system_prompt_translate_arabic_spanish_english_combined.json",
+            "weight": 0.05
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.25,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 107762,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_es_fa",
+      "family": "title_a",
+      "task": "translate",
+      "source": "es",
+      "target": "fa",
+      "column_policy": {
+        "instruct": {
+          "Spanish_output": 1
+        },
+        "output": {
+          "revise_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_spanish_persian_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_english_spanish_persian_combined.json",
+            "weight": 0.07
+          },
+          {
+            "file": "system_prompt_translate_spanish_spanish_persian_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_chinese_spanish_persian_combined.json",
+            "weight": 0.01
+          },
+          {
+            "file": "system_prompt_translate_arabic_spanish_persian_combined.json",
+            "weight": 0.07
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.25,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 107762,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_es_zh",
+      "family": "title_a",
+      "task": "translate",
+      "source": "es",
+      "target": "zh",
+      "column_policy": {
+        "instruct": {
+          "Spanish_output": 1
+        },
+        "output": {
+          "Chinese_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_spanish_chinese_combined.json",
+            "weight": 0.02
+          },
+          {
+            "file": "system_prompt_translate_english_spanish_chinese_combined.json",
+            "weight": 0.11
+          },
+          {
+            "file": "system_prompt_translate_spanish_spanish_chinese_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_chinese_spanish_chinese_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_arabic_spanish_chinese_combined.json",
+            "weight": 0.02
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.08,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 34484,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_fa_ar",
+      "family": "title_a",
+      "task": "translate",
+      "source": "fa",
+      "target": "ar",
+      "column_policy": {
+        "instruct": {
+          "revise_output": 1
+        },
+        "output": {
+          "Arabic_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_persian_arabic_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_english_persian_arabic_combined.json",
+            "weight": 0.05
+          },
+          {
+            "file": "system_prompt_translate_spanish_persian_arabic_combined.json",
+            "weight": 0.05
+          },
+          {
+            "file": "system_prompt_translate_chinese_persian_arabic_combined.json",
+            "weight": 0.05
+          },
+          {
+            "file": "system_prompt_translate_arabic_persian_arabic_combined.json",
+            "weight": 0.55
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.25,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 107762,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_fa_en",
+      "family": "title_a",
+      "task": "translate",
+      "source": "fa",
+      "target": "en",
+      "column_policy": {
+        "instruct": {
+          "revise_output": 1
+        },
+        "output": {
+          "English_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_persian_english_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_english_persian_english_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_spanish_persian_english_combined.json",
+            "weight": 0.07
+          },
+          {
+            "file": "system_prompt_translate_chinese_persian_english_combined.json",
+            "weight": 0.01
+          },
+          {
+            "file": "system_prompt_translate_arabic_persian_english_combined.json",
+            "weight": 0.07
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.7,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 301733,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_fa_es",
+      "family": "title_a",
+      "task": "translate",
+      "source": "fa",
+      "target": "es",
+      "column_policy": {
+        "instruct": {
+          "revise_output": 1
+        },
+        "output": {
+          "Spanish_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_persian_spanish_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_english_persian_spanish_combined.json",
+            "weight": 0.07
+          },
+          {
+            "file": "system_prompt_translate_spanish_persian_spanish_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_chinese_persian_spanish_combined.json",
+            "weight": 0.01
+          },
+          {
+            "file": "system_prompt_translate_arabic_persian_spanish_combined.json",
+            "weight": 0.07
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.25,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 107762,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_fa_zh",
+      "family": "title_a",
+      "task": "translate",
+      "source": "fa",
+      "target": "zh",
+      "column_policy": {
+        "instruct": {
+          "revise_output": 1
+        },
+        "output": {
+          "Chinese_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_persian_chinese_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_english_persian_chinese_combined.json",
+            "weight": 0.02
+          },
+          {
+            "file": "system_prompt_translate_spanish_persian_chinese_combined.json",
+            "weight": 0.02
+          },
+          {
+            "file": "system_prompt_translate_chinese_persian_chinese_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_arabic_persian_chinese_combined.json",
+            "weight": 0.11
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.25,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 107762,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_zh_ar",
+      "family": "title_a",
+      "task": "translate",
+      "source": "zh",
+      "target": "ar",
+      "column_policy": {
+        "instruct": {
+          "Chinese_output": 1
+        },
+        "output": {
+          "Arabic_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_chinese_arabic_combined.json",
+            "weight": 0.11
+          },
+          {
+            "file": "system_prompt_translate_english_chinese_arabic_combined.json",
+            "weight": 0.02
+          },
+          {
+            "file": "system_prompt_translate_spanish_chinese_arabic_combined.json",
+            "weight": 0.02
+          },
+          {
+            "file": "system_prompt_translate_chinese_chinese_arabic_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_arabic_chinese_arabic_combined.json",
+            "weight": 0.55
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.08,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 34484,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_zh_en",
+      "family": "title_a",
+      "task": "translate",
+      "source": "zh",
+      "target": "en",
+      "column_policy": {
+        "instruct": {
+          "Chinese_output": 1
+        },
+        "output": {
+          "English_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_chinese_english_combined.json",
+            "weight": 0.02
+          },
+          {
+            "file": "system_prompt_translate_english_chinese_english_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_spanish_chinese_english_combined.json",
+            "weight": 0.11
+          },
+          {
+            "file": "system_prompt_translate_chinese_chinese_english_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_arabic_chinese_english_combined.json",
+            "weight": 0.02
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.25,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 107762,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_zh_es",
+      "family": "title_a",
+      "task": "translate",
+      "source": "zh",
+      "target": "es",
+      "column_policy": {
+        "instruct": {
+          "Chinese_output": 1
+        },
+        "output": {
+          "Spanish_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_chinese_spanish_combined.json",
+            "weight": 0.02
+          },
+          {
+            "file": "system_prompt_translate_english_chinese_spanish_combined.json",
+            "weight": 0.11
+          },
+          {
+            "file": "system_prompt_translate_spanish_chinese_spanish_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_chinese_chinese_spanish_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_arabic_chinese_spanish_combined.json",
+            "weight": 0.02
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.08,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 34484,
+      "known_instruction_conflict": false
+    },
+    {
+      "id": "title_a_translate_zh_fa",
+      "family": "title_a",
+      "task": "translate",
+      "source": "zh",
+      "target": "fa",
+      "column_policy": {
+        "instruct": {
+          "Chinese_output": 1
+        },
+        "output": {
+          "revise_output": 1
+        }
+      },
+      "prompt_groups": [
+        [
+          {
+            "file": "system_prompt_translate_persian_chinese_persian_combined.json",
+            "weight": 0.55
+          },
+          {
+            "file": "system_prompt_translate_english_chinese_persian_combined.json",
+            "weight": 0.02
+          },
+          {
+            "file": "system_prompt_translate_spanish_chinese_persian_combined.json",
+            "weight": 0.02
+          },
+          {
+            "file": "system_prompt_translate_chinese_chinese_persian_combined.json",
+            "weight": 0.3
+          },
+          {
+            "file": "system_prompt_translate_arabic_chinese_persian_combined.json",
+            "weight": 0.11
+          }
+        ]
+      ],
+      "sample": {
+        "frac": 0.25,
+        "random_state": 42,
+        "applied": true
+      },
+      "composition": {
+        "seed": 42,
+        "min_sentences": 1,
+        "max_sentences": 1,
+        "random_groups": true,
+        "sep_choices": {
+          " \n ": 0.6,
+          " , ": 0.15,
+          " - ": 0.05,
+          " | ": 0.05,
+          " \n\n ": 0.09,
+          " -- ": 0.01,
+          "    ": 0.05
+        }
+      },
+      "historical_retained_records": 107762,
+      "known_instruction_conflict": false
+    }
+  ]
+}

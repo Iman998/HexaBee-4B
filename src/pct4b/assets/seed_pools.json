@@ -1,0 +1,182 @@
+[
+  {
+    "component": "language",
+    "language": "en",
+    "text": "Answer in {target}."
+  },
+  {
+    "component": "complete",
+    "language": "en",
+    "text": "Give a complete and comprehensive answer."
+  },
+  {
+    "component": "moderate",
+    "language": "en",
+    "text": "Give a moderately detailed answer."
+  },
+  {
+    "component": "formal",
+    "language": "en",
+    "text": "Use a formal register."
+  },
+  {
+    "component": "informal",
+    "language": "en",
+    "text": "Use an informal register."
+  },
+  {
+    "component": "translate",
+    "language": "en",
+    "text": "Translate from {source} into {target}. Return only the translation."
+  },
+  {
+    "component": "language",
+    "language": "fa",
+    "text": "به زبان {target} پاسخ بده."
+  },
+  {
+    "component": "complete",
+    "language": "fa",
+    "text": "پاسخی کامل و جامع ارائه بده."
+  },
+  {
+    "component": "moderate",
+    "language": "fa",
+    "text": "پاسخی با جزئیات متوسط ارائه بده."
+  },
+  {
+    "component": "formal",
+    "language": "fa",
+    "text": "از لحن رسمی استفاده کن."
+  },
+  {
+    "component": "informal",
+    "language": "fa",
+    "text": "از لحن غیررسمی استفاده کن."
+  },
+  {
+    "component": "translate",
+    "language": "fa",
+    "text": "از زبان {source} به {target} ترجمه کن. فقط ترجمه را برگردان."
+  },
+  {
+    "component": "language",
+    "language": "ar",
+    "text": "أجب باللغة {target}."
+  },
+  {
+    "component": "complete",
+    "language": "ar",
+    "text": "قدّم إجابة كاملة وشاملة."
+  },
+  {
+    "component": "moderate",
+    "language": "ar",
+    "text": "قدّم إجابة متوسطة التفصيل."
+  },
+  {
+    "component": "formal",
+    "language": "ar",
+    "text": "استخدم أسلوبًا رسميًا."
+  },
+  {
+    "component": "informal",
+    "language": "ar",
+    "text": "استخدم أسلوبًا غير رسمي."
+  },
+  {
+    "component": "translate",
+    "language": "ar",
+    "text": "ترجم من {source} إلى {target}. أعد الترجمة فقط."
+  },
+  {
+    "component": "language",
+    "language": "zh",
+    "text": "请用{target}回答。"
+  },
+  {
+    "component": "complete",
+    "language": "zh",
+    "text": "请给出完整全面的回答。"
+  },
+  {
+    "component": "moderate",
+    "language": "zh",
+    "text": "请给出详细程度适中的回答。"
+  },
+  {
+    "component": "formal",
+    "language": "zh",
+    "text": "请使用正式语体。"
+  },
+  {
+    "component": "informal",
+    "language": "zh",
+    "text": "请使用非正式语体。"
+  },
+  {
+    "component": "translate",
+    "language": "zh",
+    "text": "请将{source}翻译成{target}，只返回译文。"
+  },
+  {
+    "component": "language",
+    "language": "he",
+    "text": "ענה בשפה {target}."
+  },
+  {
+    "component": "complete",
+    "language": "he",
+    "text": "ספק תשובה מלאה ומקיפה."
+  },
+  {
+    "component": "moderate",
+    "language": "he",
+    "text": "ספק תשובה ברמת פירוט בינונית."
+  },
+  {
+    "component": "formal",
+    "language": "he",
+    "text": "השתמש בסגנון רשמי."
+  },
+  {
+    "component": "informal",
+    "language": "he",
+    "text": "השתמש בסגנון לא רשמי."
+  },
+  {
+    "component": "translate",
+    "language": "he",
+    "text": "תרגם מ{source} ל{target}. החזר רק את התרגום."
+  },
+  {
+    "component": "language",
+    "language": "es",
+    "text": "Responde en {target}."
+  },
+  {
+    "component": "complete",
+    "language": "es",
+    "text": "Da una respuesta completa y exhaustiva."
+  },
+  {
+    "component": "moderate",
+    "language": "es",
+    "text": "Da una respuesta con un nivel moderado de detalle."
+  },
+  {
+    "component": "formal",
+    "language": "es",
+    "text": "Usa un registro formal."
+  },
+  {
+    "component": "informal",
+    "language": "es",
+    "text": "Usa un registro informal."
+  },
+  {
+    "component": "translate",
+    "language": "es",
+    "text": "Traduce de {source} a {target}. Devuelve solo la traducción."
+  }
+]

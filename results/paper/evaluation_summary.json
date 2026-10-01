@@ -1,0 +1,228 @@
+{
+  "n": 300,
+  "directions": [
+    "ar-en",
+    "ar-es",
+    "ar-fa",
+    "ar-he",
+    "ar-zh",
+    "en-ar",
+    "en-es",
+    "en-fa",
+    "en-he",
+    "en-zh",
+    "es-ar",
+    "es-en",
+    "es-fa",
+    "es-he",
+    "es-zh",
+    "fa-ar",
+    "fa-en",
+    "fa-es",
+    "fa-he",
+    "fa-zh",
+    "he-ar",
+    "he-en",
+    "he-es",
+    "he-fa",
+    "he-zh",
+    "zh-ar",
+    "zh-en",
+    "zh-es",
+    "zh-fa",
+    "zh-he"
+  ],
+  "items_per_direction": 10,
+  "seed": 20260912,
+  "bootstrap_replicates": 10000,
+  "zero_scores_recovered_from_raw": {
+    "Gemma 3 4B IT": {
+      "no_reference": 13,
+      "reference": 11
+    },
+    "PCT-4B": {},
+    "Gemma 3 12B IT": {
+      "no_reference": 1
+    }
+  },
+  "models": {
+    "Gemma 3 4B IT": {
+      "reference": {
+        "mean": 80.32333333333334,
+        "ci95": [
+          77.57991666666666,
+          82.92333333333333
+        ],
+        "n_valid": 300,
+        "score_le10": 28,
+        "score_le40": 32,
+        "sections": {
+          "semantic_accuracy": 82.99333333333334,
+          "terminology": 75.60333333333334,
+          "fluency": 83.03333333333333,
+          "cohesion": 83.17333333333333,
+          "contextual_appropriateness": 82.46333333333334,
+          "target_language_adherence": 82.87666666666667,
+          "style": 79.68,
+          "formatting": 85.92333333333333
+        }
+      },
+      "no_reference": {
+        "mean": 81.43333333333334,
+        "ci95": [
+          78.67658333333333,
+          84.04675
+        ],
+        "n_valid": 300,
+        "score_le10": 28,
+        "score_le40": 29,
+        "sections": {
+          "semantic_accuracy": 84.72,
+          "terminology": 79.94666666666667,
+          "fluency": 84.21333333333334,
+          "cohesion": 84.59,
+          "contextual_appropriateness": 83.34,
+          "target_language_adherence": 83.36666666666666,
+          "style": 81.55333333333333,
+          "formatting": 85.34
+        }
+      },
+      "chrfpp": 60.41254965940698,
+      "chrfpp_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.5.1"
+    },
+    "PCT-4B": {
+      "reference": {
+        "mean": 92.92,
+        "ci95": [
+          91.94658333333334,
+          93.72666666666667
+        ],
+        "n_valid": 300,
+        "score_le10": 1,
+        "score_le40": 3,
+        "sections": {
+          "semantic_accuracy": 95.75,
+          "terminology": 90.41666666666667,
+          "fluency": 96.15,
+          "cohesion": 95.51666666666667,
+          "contextual_appropriateness": 95.49333333333334,
+          "target_language_adherence": 96.15333333333334,
+          "style": 92.96333333333334,
+          "formatting": 96.32666666666667
+        }
+      },
+      "no_reference": {
+        "mean": 94.10333333333334,
+        "ci95": [
+          93.32,
+          94.72341666666667
+        ],
+        "n_valid": 300,
+        "score_le10": 0,
+        "score_le40": 2,
+        "sections": {
+          "semantic_accuracy": 96.01,
+          "terminology": 94.09666666666666,
+          "fluency": 95.11333333333333,
+          "cohesion": 94.67,
+          "contextual_appropriateness": 94.93666666666667,
+          "target_language_adherence": 95.57666666666667,
+          "style": 93.24666666666667,
+          "formatting": 95.15
+        }
+      },
+      "chrfpp": 77.49613292008702,
+      "chrfpp_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.5.1"
+    },
+    "Gemma 3 12B IT": {
+      "reference": {
+        "mean": 91.73,
+        "ci95": [
+          90.7,
+          92.62008333333334
+        ],
+        "n_valid": 300,
+        "score_le10": 2,
+        "score_le40": 2,
+        "sections": {
+          "semantic_accuracy": 94.93666666666667,
+          "terminology": 88.42333333333333,
+          "fluency": 94.65333333333334,
+          "cohesion": 94.43,
+          "contextual_appropriateness": 94.06,
+          "target_language_adherence": 94.13333333333334,
+          "style": 91.05666666666667,
+          "formatting": 93.31
+        }
+      },
+      "no_reference": {
+        "mean": 91.97333333333333,
+        "ci95": [
+          90.74666666666667,
+          93.00008333333334
+        ],
+        "n_valid": 300,
+        "score_le10": 3,
+        "score_le40": 5,
+        "sections": {
+          "semantic_accuracy": 94.80333333333333,
+          "terminology": 91.86333333333333,
+          "fluency": 93.13333333333334,
+          "cohesion": 93.15666666666667,
+          "contextual_appropriateness": 93.39,
+          "target_language_adherence": 93.24666666666667,
+          "style": 91.59333333333333,
+          "formatting": 93.02666666666667
+        }
+      },
+      "chrfpp": 70.83101145839498,
+      "chrfpp_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.5.1"
+    }
+  },
+  "paired_differences": {
+    "PCT-4B minus Gemma 3 4B IT": {
+      "reference": {
+        "mean": 12.596666666666666,
+        "ci95": [
+          9.956666666666667,
+          15.310249999999996
+        ],
+        "wins": 214,
+        "ties": 54,
+        "losses": 32
+      },
+      "no_reference": {
+        "mean": 12.67,
+        "ci95": [
+          10.126583333333334,
+          15.336666666666666
+        ],
+        "wins": 219,
+        "ties": 54,
+        "losses": 27
+      }
+    },
+    "PCT-4B minus Gemma 3 12B IT": {
+      "reference": {
+        "mean": 1.19,
+        "ci95": [
+          0.34,
+          2.08
+        ],
+        "wins": 140,
+        "ties": 80,
+        "losses": 80
+      },
+      "no_reference": {
+        "mean": 2.13,
+        "ci95": [
+          1.29,
+          3.13
+        ],
+        "wins": 141,
+        "ties": 84,
+        "losses": 75
+      }
+    }
+  }
+}
