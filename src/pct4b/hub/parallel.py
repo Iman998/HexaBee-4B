@@ -103,10 +103,14 @@ def upload_parallel(api, entry, folder, pending, hashes, state, state_path, work
                         flush=True,
                     )
             replenish()
-            # Keep already preuploaded files together while other transfers finish.
-            # Committing on an idle poll produces many one-file commits and can
-            # exhaust the Hub's repository-commit rate limit.
-            if len(ready) >= batch_size or not active:
+            # Keep preuploaded files in substantial batches. A slow last file
+            # must not hold an almost-full batch indefinitely; after an idle
+            # poll, flush only if at least half a batch is ready.
+            if (
+                len(ready) >= batch_size
+                or not active
+                or (not completed and len(ready) >= max(5, batch_size // 2))
+            ):
                 commit_ready()
             seconds = max(0.001, time.monotonic() - started)
             atomic_json(

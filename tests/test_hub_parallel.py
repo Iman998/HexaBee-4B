@@ -95,3 +95,43 @@ def test_idle_poll_waits_to_fill_commit_batch(tmp_path, monkeypatch):
         batch_size=2,
     )
     assert commits == [["first.bin", "slow.bin"]]
+
+
+def test_slow_file_releases_nearly_full_batch(tmp_path, monkeypatch):
+    from pct4b.hub import parallel
+
+    files = [f"fast-{index}.bin" for index in range(9)] + ["slow.bin"]
+    for name in files:
+        (tmp_path / name).write_bytes(name.encode())
+    hashes = {name: file_hash(tmp_path / name) for name in files}
+    commits = []
+
+    class API:
+        def preupload_lfs_files(self, repo, ops, **kwargs):
+            if ops[0].path_in_repo == "slow.bin":
+                time.sleep(0.2)
+            ops[0]._is_uploaded = True
+
+        def create_commit(self, operations, **kwargs):
+            commits.append([op.path_in_repo for op in operations])
+            return SimpleNamespace(oid="commit")
+
+    monkeypatch.setattr(
+        parallel,
+        "wait",
+        lambda active, timeout, return_when: real_wait(
+            active, timeout=0.01, return_when=return_when
+        ),
+    )
+    parallel.upload_parallel(
+        API(),
+        {"repo_id": "owner/data", "repo_type": "dataset", "title": "Data"},
+        tmp_path,
+        files,
+        hashes,
+        {"uploaded": {}},
+        tmp_path / "upload_state.json",
+        workers=2,
+        batch_size=10,
+    )
+    assert [len(batch) for batch in commits] == [9, 1]
