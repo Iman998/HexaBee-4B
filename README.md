@@ -72,6 +72,8 @@ The recorded phase-2 mixture contains **19,458,332 answering** and **10,695,072 
 
 These are archived research results with synthetic references, differing recorded inference prompts, and model-based judging. They are not an official shared-task ranking. The experiment evaluates the complete adaptation sequence; it does not isolate the causal contribution of answering. See [evaluation.md](docs/evaluation.md) and [reproducibility.md](docs/reproducibility.md).
 
+A checkpoint comparison of phase 1, phases 1+2, and translation-only v2 is described in [ablation.md](docs/ablation.md). Its raw outputs and non-judge metric results are kept with the paper workspace, separate from the archived results above.
+
 ## Repository map
 
 ```text
@@ -100,6 +102,6 @@ python scripts/reproduce_paper.py
 
 The saved numeric artifacts verify aggregate scores and paired intervals. They cannot replace the original source, reference, and candidate strings for a fresh full metric pass. The historical phase-1 trainer YAML, exact teacher revisions, and original unseeded split membership were not archived. This repository supplies a runnable **new** PT recipe and preserves the recorded stage-2/3 settings; it does not promise bit-identical checkpoint reconstruction. See [reproducibility.md](docs/reproducibility.md).
 
-Full instructions: [workflow and Slurm](docs/workflow.md) · [data formats](docs/data.md) · [training](docs/training.md) · [evaluation](docs/evaluation.md) · [Hugging Face release](docs/huggingface.md).
+Full instructions: [workflow and Slurm](docs/workflow.md) · [data formats](docs/data.md) · [training](docs/training.md) · [evaluation](docs/evaluation.md) · [checkpoint ablation](docs/ablation.md) · [Hugging Face release](docs/huggingface.md).
 
 Software license: [MIT](LICENSE). Dataset and model terms are described in [DATA_AND_MODELS.md](DATA_AND_MODELS.md). For citation, use [CITATION.cff](CITATION.cff) until final publication details are available.
