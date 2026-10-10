@@ -65,12 +65,20 @@ examples per model**, ten per direction, or 900 output rows for three models.
 
 Run every storage and compute operation through Slurm. The release data,
 checkpoints, and scripts must be visible on the compute node. The CPU builder
-job is `jobs/ablation_subset_6000.sbatch`; the H100 inference and CPU metric
-jobs are `jobs/ablation_infer_6000.sbatch` and
-`jobs/ablation_metrics_6000.sbatch`. Job names are `eval+phase12`,
-`eval+phase3`, and `metric+...`. The metric jobs depend on successful inference.
-Each inference job checkpoints to its own SQLite database after every batch;
-`predictions.jsonl` appears atomically only when all 6,000 candidates exist.
+job is `jobs/ablation_subset_6000.sbatch`; the H100 inference job is
+`jobs/ablation_infer_6000.sbatch`. Use
+`jobs/ablation_parallel_metrics.sbatch` for CPU scoring. It runs eight
+independent direction scorers, saves each direction's sufficient statistics,
+and resumes without recomputing finished directions. Its results matched the
+published `pct4b.evaluation.score_metrics` JSON exactly in a Slurm smoke test
+with two examples in each of the 30 directions. The earlier serial wrapper
+`jobs/ablation_metrics_6000.sbatch` remains for provenance; it exceeded a
+one-hour limit on the archived final outputs.
+
+Job names are `eval+phase12`, `eval+phase3`, and `metric+...`. The checkpoint
+metric jobs depend on successful inference. Each inference job checkpoints to
+its own SQLite database after every batch; `predictions.jsonl` appears
+atomically only when all 6,000 candidates exist.
 
 The original Gemma checkpoint is `/mnt/ai_team/models/gemma-3-4b-it`.
 The v2 adapter's 476 LoRA tensors were remapped into a separate compatible
