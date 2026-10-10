@@ -84,3 +84,9 @@ The original Gemma checkpoint is `/mnt/ai_team/models/gemma-3-4b-it`.
 The v2 adapter's 476 LoRA tensors were remapped into a separate compatible
 copy by `scripts/remap_gemma3_adapter.py`; inference verifies every tensor
 value after loading. The archived originals are preserved.
+
+After all three metric jobs succeed, `jobs/ablation_finalize_report.sbatch`
+runs `scripts/ablation_finalize_report.py`. It verifies the 6,000 identical
+IDs and source/reference fields, checks metric direction counts and macros,
+and writes `ABLATION_REPORT.md`, `ablation_summary.json`, and
+`per_direction_metrics.csv` in the selected-run directory.
