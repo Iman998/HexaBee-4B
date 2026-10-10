@@ -32,6 +32,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--adapter-path", type=Path)
     parser.add_argument("--processor-path", type=Path)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument(
+        "--reuse-progress", type=Path,
+        help="Stopped full-test SQLite progress from the identical checkpoint and decoding setup",
+    )
     parser.add_argument("--model-name", required=True)
     parser.add_argument("--expected-rows", type=int, default=36572)
     parser.add_argument("--batch-size", type=int, default=4)
@@ -88,6 +92,40 @@ def open_progress(path: Path, run_config: dict) -> sqlite3.Connection:
         connection.execute("INSERT INTO meta VALUES (?, ?)", ("run_config", encoded))
         connection.commit()
     return connection
+
+
+def reuse_predictions(
+    connection: sqlite3.Connection,
+    selected_ids: set[str],
+    source_path: Path,
+    run_config: dict,
+) -> int:
+    """Copy only selected completed predictions from a stopped, compatible run."""
+    if source_path.resolve() == Path(connection.execute("PRAGMA database_list").fetchone()[2]).resolve():
+        raise ValueError("Reuse source must differ from the current progress database")
+    with sqlite3.connect(f"file:{source_path}?mode=ro", uri=True) as source:
+        saved = dict(source.execute("SELECT key, value FROM meta"))
+        source_config = json.loads(saved["run_config"])
+        keys = (
+            "model_path", "adapter_path", "processor_path", "model_name", "prompt",
+            "attention_implementation", "max_new_tokens", "transformers_version", "torch_version",
+        )
+        mismatched = [key for key in keys if source_config.get(key) != run_config.get(key)]
+        if mismatched:
+            raise ValueError(f"Reuse source has incompatible configuration: {mismatched}")
+        before = connection.total_changes
+        with connection:
+            connection.executemany(
+                "INSERT OR IGNORE INTO predictions VALUES (?, ?, ?, ?)",
+                (
+                    (identifier, candidate, output_tokens, hit_limit)
+                    for identifier, candidate, output_tokens, hit_limit in source.execute(
+                        "SELECT id, candidate, output_tokens, hit_limit FROM predictions"
+                    )
+                    if identifier in selected_ids
+                ),
+            )
+        return connection.total_changes - before
 
 
 def chat_batch(rows: list[dict]) -> list[list[dict]]:
@@ -245,8 +283,12 @@ def main() -> None:
         "torch_version": torch.__version__,
     }
     connection = open_progress(args.output_dir / "progress.sqlite", run_config)
+    selected_ids = {row["id"] for row in rows}
+    if args.reuse_progress:
+        imported = reuse_predictions(connection, selected_ids, args.reuse_progress, run_config)
+        print(f"REUSED predictions={imported} source={args.reuse_progress}", flush=True)
     completed = {identifier for (identifier,) in connection.execute("SELECT id FROM predictions")}
-    if completed - {row["id"] for row in rows}:
+    if completed - selected_ids:
         raise ValueError("Progress contains IDs outside the selected test")
     pending = [row for row in rows if row["id"] not in completed]
     print(
