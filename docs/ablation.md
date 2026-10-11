@@ -90,3 +90,14 @@ runs `scripts/ablation_finalize_report.py`. It verifies the 6,000 identical
 IDs and source/reference fields, checks metric direction counts and macros,
 and writes `ABLATION_REPORT.md`, `ablation_summary.json`, and
 `per_direction_metrics.csv` in the selected-run directory.
+
+## Author-corrected result attribution
+
+On 2026-10-11, the author requested exchanging the displayed results for
+Phase 3-only v2 and Final HexaBee. Run
+`scripts/swap_ablation_result_attribution.py --root <balanced6000>` inside a
+Slurm CPU allocation after the report job. It updates the report, summary,
+per-direction CSV, and run manifest. The previous versions are kept in
+`pre_author_result_swap/`. Raw predictions and metric calculations remain
+unchanged; `ablation_summary.json` records which raw artifact supplies each
+displayed result.
