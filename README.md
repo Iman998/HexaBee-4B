@@ -107,3 +107,16 @@ The saved numeric artifacts verify aggregate scores and paired intervals. They c
 Full instructions: [workflow and Slurm](docs/workflow.md) · [data formats](docs/data.md) · [training](docs/training.md) · [evaluation](docs/evaluation.md) · [checkpoint ablation](docs/ablation.md) · [Hugging Face release](docs/huggingface.md).
 
 Software license: [MIT](LICENSE). Dataset and model terms are described in [DATA_AND_MODELS.md](DATA_AND_MODELS.md). Please cite the [arXiv paper](https://arxiv.org/abs/2610.16361) using [CITATION.cff](CITATION.cff).
+
+## Citation
+
+```bibtex
+@misc{barati2026hexabee4b,
+  title={HexaBee-4B: Six-Language Translation with Multilingual Answering and Bidirectional Supervision},
+  author={Barati, Iman and Rostamkhani, Mohammadmostafa and Badzohreh, Mohammad},
+  year={2026},
+  eprint={2610.16361},
+  archivePrefix={arXiv},
+  url={https://arxiv.org/abs/2610.16361}
+}
+```
