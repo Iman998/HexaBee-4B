@@ -4,6 +4,8 @@
 
 Code and configuration for the six-language HexaBee translation experiment. The repository follows the actual work: prepare Wikipedia text and multilingual answering data, build aligned translation supervision, render LoRA training configurations, evaluate matched predictions, and verify the reported numeric results.
 
+**Paper:** Iman Barati, Mohammadmostafa Rostamkhani, and Mohammad Badzohreh, [*HexaBee-4B: Six-Language Translation with Multilingual Answering and Bidirectional Supervision*](https://arxiv.org/abs/2610.16361), arXiv:2610.16361 (2026). [Citation metadata](CITATION.cff).
+
 **Languages:** Persian, English, Arabic, Chinese, Hebrew, and Spanish. **Task:** translation in all 30 non-identity directions. The released [final model](https://huggingface.co/Iman998/HexaBee-4B), [multilingual SFT data](https://huggingface.co/datasets/Iman998/HexaBee-Multilingual-SFT), and [evaluation archive](https://huggingface.co/datasets/Iman998/HexaBee-Evaluation) are separate from this code repository.
 
 ![HexaBee at a glance: six languages, 30 directions, and three adaptation phases](src/pct4b/assets/hub-overviews/model.png)
@@ -104,4 +106,4 @@ The saved numeric artifacts verify aggregate scores and paired intervals. They c
 
 Full instructions: [workflow and Slurm](docs/workflow.md) · [data formats](docs/data.md) · [training](docs/training.md) · [evaluation](docs/evaluation.md) · [checkpoint ablation](docs/ablation.md) · [Hugging Face release](docs/huggingface.md).
 
-Software license: [MIT](LICENSE). Dataset and model terms are described in [DATA_AND_MODELS.md](DATA_AND_MODELS.md). For citation, use [CITATION.cff](CITATION.cff) until final publication details are available.
+Software license: [MIT](LICENSE). Dataset and model terms are described in [DATA_AND_MODELS.md](DATA_AND_MODELS.md). Please cite the [arXiv paper](https://arxiv.org/abs/2610.16361) using [CITATION.cff](CITATION.cff).
