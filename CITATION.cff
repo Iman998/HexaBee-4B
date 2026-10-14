@@ -1,11 +1,28 @@
 cff-version: 1.2.0
-message: "This repository accompanies the HexaBee-4B submission draft. Use the final author and publication metadata when it becomes available."
+message: "Please cite the HexaBee-4B paper when using this research code."
 title: "HexaBee-4B: Six-Language Translation with Multilingual Answering and Bidirectional Supervision"
 type: software
 url: "https://github.com/Iman998/HexaBee-4B"
 authors:
-  - name: "HexaBee-4B authors"
+  - family-names: Barati
+    given-names: Iman
+  - family-names: Rostamkhani
+    given-names: Mohammadmostafa
+  - family-names: Badzohreh
+    given-names: Mohammad
 version: 0.1.0
 date-released: 2026-10-02
 license: MIT
 abstract: "Research code for multilingual data construction, model adaptation, translation evaluation, and numeric result verification for HexaBee-4B."
+preferred-citation:
+  type: article
+  title: "HexaBee-4B: Six-Language Translation with Multilingual Answering and Bidirectional Supervision"
+  authors:
+    - family-names: Barati
+      given-names: Iman
+    - family-names: Rostamkhani
+      given-names: Mohammadmostafa
+    - family-names: Badzohreh
+      given-names: Mohammad
+  year: 2026
+  url: "https://arxiv.org/abs/2610.16361"
